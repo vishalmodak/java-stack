@@ -1,0 +1,30 @@
+info:
+  component: gateway
+  
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+server:
+  port: 7979
+
+management:
+  port: 7980
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+    com.netflix: DEBUG
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true #this allows this application to register itself to eureka. this is required to fetch the clients from eureka
+    fetchRegistry: true #this allows to fetch info about clients registered (url, id, etc) with eureka so that they can be called by the application
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      

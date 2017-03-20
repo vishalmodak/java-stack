@@ -1,0 +1,35 @@
+info:
+  component: Hotel Pricing
+
+eureka:
+  instance:
+#    metadataMap:
+#      cluster: hyatt
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl: 
+      defaultZone: http://localhost:7979/eureka/
+      
+server:
+#  port: 12000
+  port: 0
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+    com.netflix: DEBUG
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: true
+    
+hystrix:
+  stream:
+    maxConcurrentConnections: 20
+    bus:
+      enabled: true

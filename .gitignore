@@ -1,0 +1,10 @@
+bin/
+.settings/
+.prefs
+.gradle/
+.java-version
+.springBeans
+build/
+reports/
+.project
+.classpath
