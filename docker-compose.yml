@@ -1,37 +1,37 @@
 version: "2"
 services:
-  hotel-aggregator:
+  svc-aggregator:
     build: 
-      context: ./HotelGateway
+      context: ./svc-aggregator
 #    container_name: aggregator
     links:
       - zipkin
     ports:
       - 10000:10000
       - 9999:9999
-  hotel-details:
+  svc-details:
     build: 
-      context: ./HotelDetailsService
+      context: ./svc-detail
 #    container_name: hotel-details
     links:
-      - hotel-aggregator
+      - svc-aggregator
       - zipkin
     ports:
       - 10002:10002
-#  hotel-pricing:
-#    build: HotelPricingService/.
+#  svc-pricing:
+#    build: svc-pricing/.
 #    links:
 #      - hotel-aggregator
 #      - zipkin
-#  hotel-rating:
-#    build: HotelRatingService/.
+#  svc-rating:
+#    build: svc-rating/.
 #    links:
-#      - hotel-aggregator
+#      - svc-aggregator
 #      - zipkin
-#  hotel-availability:
-#    build: HotelAvailabilityService/.
+#  svc-availability:
+#    build: svc-availability/.
 #    links:
-#      - hotel-aggregator
+#      - svc-aggregator
 #      - zipkin
   zipkin:
     image: openzipkin/zipkin
