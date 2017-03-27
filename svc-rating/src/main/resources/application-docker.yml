@@ -1,6 +1,3 @@
-eureka:
-  instance:
-    hostname: aggregator
 spring:
   zipkin:
     base-url: http://zipkin:9411
