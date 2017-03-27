@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<configuration debug="true" scan="true" scanPeriod="30 seconds">
+    <!-- The following properties are being read from application.properties -->
+    <springProperty name="appName" source="spring.application.name"/>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%date]|${HOSTNAME}|${appName}|%-5level|%logger{35}|%line|%msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <logger name="org.apache.http" level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <logger name="org.springframework" level="INFO"> -->
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+</configuration>

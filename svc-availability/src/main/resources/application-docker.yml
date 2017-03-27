@@ -1,0 +1,6 @@
+eureka:
+  instance:
+    hostname: hotel-aggregator
+spring:
+  zipkin:
+    base-url: http://zipkin:9411

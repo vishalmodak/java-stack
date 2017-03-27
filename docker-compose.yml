@@ -1,0 +1,41 @@
+version: "2"
+services:
+  hotel-aggregator:
+    build: 
+      context: ./HotelGateway
+#    container_name: aggregator
+    links:
+      - zipkin
+    ports:
+      - 10000:10000
+      - 9999:9999
+  hotel-details:
+    build: 
+      context: ./HotelDetailsService
+#    container_name: hotel-details
+    links:
+      - hotel-aggregator
+      - zipkin
+    ports:
+      - 10002:10002
+#  hotel-pricing:
+#    build: HotelPricingService/.
+#    links:
+#      - hotel-aggregator
+#      - zipkin
+#  hotel-rating:
+#    build: HotelRatingService/.
+#    links:
+#      - hotel-aggregator
+#      - zipkin
+#  hotel-availability:
+#    build: HotelAvailabilityService/.
+#    links:
+#      - hotel-aggregator
+#      - zipkin
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - 9410:9410
+      - 9411:9411
