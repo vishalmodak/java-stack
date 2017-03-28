@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-@FeignClient("hotelpricing")
+@FeignClient("svc-pricing")
 public interface HotelPricingClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/hotel/pricing/{hotelId}")

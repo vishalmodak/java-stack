@@ -11,7 +11,6 @@ import com.hotel.aggregator.AsyncResponse;
 import com.hotel.aggregator.clients.HotelAvailabilityClient;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-
 public class AvailabilityCallable implements Callable<AsyncResponse> {
     private String hotelId;
     

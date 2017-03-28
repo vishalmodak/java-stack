@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient("hotelavailability")
+@FeignClient("svc-availability")
 public interface HotelAvailabilityClient {
 
     @RequestMapping(value="/hotel/avail/{hotelId}", method=RequestMethod.GET)

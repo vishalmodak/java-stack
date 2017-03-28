@@ -1,41 +1,84 @@
 version: "2"
+networks:
+  hotel:
 services:
   svc-aggregator:
     build: 
       context: ./svc-aggregator
-#    container_name: aggregator
-    links:
-      - zipkin
+    image: svc-aggregator/consul
+    container_name: hotel-aggregator
+    networks:
+      - hotel
+#    links:
+#      - zipkin
     ports:
       - 10000:10000
       - 9999:9999
+    command: ["java","-Dspring.cloud.consul.host=consul","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/src/app/svc-aggregator.jar"]
   svc-details:
     build: 
-      context: ./svc-detail
-#    container_name: hotel-details
-    links:
-      - svc-aggregator
-      - zipkin
+      context: ./svc-details
+    image: svc-details/consul
+    container_name: hotel-details
+#    links:
+#      - zipkin
     ports:
       - 10002:10002
-#  svc-pricing:
-#    build: svc-pricing/.
+    networks:
+      - hotel
+    command: ["java","-Dspring.cloud.consul.host=consul","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/src/app/svc-details.jar"]
+    
+  svc-pricing:
+    build: 
+      context: ./svc-pricing
+    image: svc-pricing/consul
+    container_name: hotel-pricing
 #    links:
-#      - hotel-aggregator
 #      - zipkin
-#  svc-rating:
-#    build: svc-rating/.
-#    links:
-#      - svc-aggregator
-#      - zipkin
-#  svc-availability:
-#    build: svc-availability/.
-#    links:
-#      - svc-aggregator
-#      - zipkin
-  zipkin:
-    image: openzipkin/zipkin
-    container_name: zipkin
     ports:
-      - 9410:9410
-      - 9411:9411
+      - 10003:10003
+    networks:
+      - hotel
+    command: ["java","-Dspring.cloud.consul.host=consul","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/src/app/svc-pricing.jar"]
+
+  svc-rating:
+    build: 
+      context: ./svc-rating
+    image: svc-rating/consul
+    container_name: hotel-rating
+#    links:
+#      - zipkin
+    ports:
+      - 10004:10004
+    networks:
+      - hotel
+    command: ["java","-Dspring.cloud.consul.host=consul","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/src/app/svc-rating.jar"]
+
+  svc-availability:
+    build: 
+      context: ./svc-availability
+    image: svc-availability/consul
+    container_name: hotel-availability
+#    links:
+#      - zipkin
+    ports:
+      - 10001:10001
+    networks:
+      - hotel
+    command: ["java","-Dspring.cloud.consul.host=consul","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/src/app/svc-availability.jar"]
+
+#  zipkin:
+#    image: openzipkin/zipkin
+#    container_name: zipkin
+#    ports:
+#      - 9410:9410
+#      - 9411:9411
+  consul1:
+    image: consul
+    container_name: consul
+    ports:
+     - "8400:8400"
+     - "8500:8500"
+     - "8600:8600/udp"
+    networks:
+      - hotel

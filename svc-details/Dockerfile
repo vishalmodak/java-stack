@@ -8,6 +8,6 @@ RUN mkdir -p $appDir
 WORKDIR $appDir
 
 ADD build/libs/svc-details.jar . 
-CMD java -jar svc-details.jar
+CMD java -jar -Dspring.profiles.active=$SPRING_PROFILE svc-details.jar
 
 EXPOSE 10002
