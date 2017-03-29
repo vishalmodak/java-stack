@@ -1,0 +1,11 @@
+workspace:
+  base: /java
+  path: git.target.com/VishalModak/hotel-stack
+pipeline:
+  build:
+    when:
+      branch: master
+      event: push
+    image: anapsix/alpine-java:8_jdk
+    commands:
+      - "GRADLE_USER_HOME=.gradleCache svc-aggregator/gradlew clean build"
