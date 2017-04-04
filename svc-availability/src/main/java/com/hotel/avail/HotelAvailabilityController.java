@@ -15,8 +15,6 @@ import io.swagger.annotations.ApiOperation;
 @Api(value = "hotelAvailability", description = "HotelAvailability API")
 public class HotelAvailabilityController {
 
-//    @Autowired
-//    private DiscoveryClient client;
     @Autowired
     private HotelAvailabilityService service;
     

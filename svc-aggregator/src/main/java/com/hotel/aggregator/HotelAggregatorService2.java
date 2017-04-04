@@ -12,7 +12,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
 
 import com.hotel.aggregator.callable.AvailabilityCallable;
@@ -28,9 +27,6 @@ public class HotelAggregatorService2 {
     private static final int TIMEOUT = 2000;
     
     @Autowired
-    private DiscoveryClient discoveryClient;
-    
-    @Autowired
     private HotelDetailsClient hotelDetailsClient;
 
     @Autowired
@@ -44,7 +40,6 @@ public class HotelAggregatorService2 {
         callables.add(new DetailsCallable(hotelDetailsClient, hotelId));
         callables.add(new RatingsCallable(hotelRatingClient, hotelId));
         callables.add(new AvailabilityCallable(hotelAvailabilityClient, hotelId));
-//        callables.add(new BackendServiceCallable("pricing", getHotelPricing(hotelId)));
         return doBackendAsyncServiceCall(callables);
     }
     

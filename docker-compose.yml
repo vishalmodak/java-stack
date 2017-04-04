@@ -1,84 +1,82 @@
 version: "2"
-networks:
-  hotel:
 services:
   svc-aggregator:
-    build: 
+    build:
       context: ./svc-aggregator
+      args:
+        COLLECTOR_IP: 10.63.68.44
     image: svc-aggregator/consul
     container_name: hotel-aggregator
     networks:
-      - hotel
-#    links:
-#      - zipkin
+      - hotelstack_hotel
+    external_links:
+      - zipkin:zipkin
     ports:
       - 10000:10000
       - 9999:9999
-    command: ["java","-Dspring.cloud.consul.host=consul","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/src/app/svc-aggregator.jar"]
+    environment:
+      CONSUL_HOST: consul
   svc-details:
-    build: 
+    build:
       context: ./svc-details
+      args:
+        COLLECTOR_IP: 10.63.68.44
     image: svc-details/consul
     container_name: hotel-details
-#    links:
-#      - zipkin
+    external_links:
+      - zipkin:zipkin
     ports:
       - 10002:10002
     networks:
-      - hotel
-    command: ["java","-Dspring.cloud.consul.host=consul","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/src/app/svc-details.jar"]
-    
+      - hotelstack_hotel
+    environment:
+      CONSUL_HOST: consul
   svc-pricing:
-    build: 
+    build:
       context: ./svc-pricing
+      args:
+        COLLECTOR_IP: 10.63.68.44
     image: svc-pricing/consul
     container_name: hotel-pricing
-#    links:
-#      - zipkin
+    external_links:
+      - zipkin
     ports:
       - 10003:10003
     networks:
-      - hotel
-    command: ["java","-Dspring.cloud.consul.host=consul","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/src/app/svc-pricing.jar"]
-
+      - hotelstack_hotel
+    environment:
+      CONSUL_HOST: consul
   svc-rating:
-    build: 
+    build:
       context: ./svc-rating
+      args:
+        COLLECTOR_IP: 10.63.68.44
     image: svc-rating/consul
     container_name: hotel-rating
-#    links:
-#      - zipkin
+    external_links:
+      - zipkin
     ports:
       - 10004:10004
     networks:
-      - hotel
-    command: ["java","-Dspring.cloud.consul.host=consul","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/src/app/svc-rating.jar"]
-
+      - hotelstack_hotel
+    environment:
+      CONSUL_HOST: consul
   svc-availability:
-    build: 
+    build:
       context: ./svc-availability
+      args:
+        COLLECTOR_IP: 10.63.68.44
     image: svc-availability/consul
     container_name: hotel-availability
-#    links:
-#      - zipkin
+    external_links:
+      - zipkin
     ports:
       - 10001:10001
     networks:
-      - hotel
-    command: ["java","-Dspring.cloud.consul.host=consul","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/src/app/svc-availability.jar"]
+      - hotelstack_hotel
+    environment:
+      CONSUL_HOST: consul
 
-#  zipkin:
-#    image: openzipkin/zipkin
-#    container_name: zipkin
-#    ports:
-#      - 9410:9410
-#      - 9411:9411
-  consul1:
-    image: consul
-    container_name: consul
-    ports:
-     - "8400:8400"
-     - "8500:8500"
-     - "8600:8600/udp"
-    networks:
-      - hotel
+networks:
+  hotelstack_hotel:
+    external: true

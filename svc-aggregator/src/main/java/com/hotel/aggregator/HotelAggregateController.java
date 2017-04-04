@@ -14,33 +14,44 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @Api(value = "Hotel Aggregator")
 public class HotelAggregateController {
-    @Autowired
-    private HotelAggregatorService aggregator;
+//    @Autowired
+//    private HotelAggregatorService aggregator;
     
     @Autowired
-    private HotelAggregatorService2 aggregator2;
+    private HotelAggregatorService2 aggregator;
     
-    @RequestMapping(value="/summary/{hotelId}", method = RequestMethod.GET)
-    @ApiOperation(value = "getHotelSummary", notes = "Returns Hotel Name & Price")
-    public String getHotelSummary(@PathVariable String hotelId) throws Exception {
-        Gson gson = new Gson(); 
-        String json = gson.toJson(aggregator.getHotelSummary(hotelId)); 
-        return json;
-    }
+    @Autowired
+    private HotelSyncAggregatorService syncAggregator;
+    
+//    @RequestMapping(value="/summary/{hotelId}", method = RequestMethod.GET)
+//    @ApiOperation(value = "getHotelSummary", notes = "Returns Hotel Name & Price")
+//    public String getHotelSummary(@PathVariable String hotelId) throws Exception {
+//        Gson gson = new Gson(); 
+//        String json = gson.toJson(aggregator.getHotelSummary(hotelId)); 
+//        return json;
+//    }
 
-    @RequestMapping(value="/infoX/{hotelId}", method = RequestMethod.GET)
+    @RequestMapping(value="/info/{hotelId}", method = RequestMethod.GET)
     @ApiOperation(value = "getHotelDetails", notes = "Returns Hotel Name, Price, Reviews & Rating")
     public String getHotelInfoAsync(@PathVariable String hotelId) throws Exception {
         Gson gson = new Gson();
-        String json = gson.toJson(aggregator2.getHotelData(hotelId));
+        String json = gson.toJson(aggregator.getHotelData(hotelId));
         return json;
     }
-    
-    @RequestMapping(value="/infoY/{hotelId}", method = RequestMethod.GET)
+
+    @RequestMapping(value="/info/sync/{hotelId}", method = RequestMethod.GET)
     @ApiOperation(value = "getHotelDetails", notes = "Returns Hotel Name, Price, Reviews & Rating")
     public String getHotelInfoSync(@PathVariable String hotelId) throws Exception {
         Gson gson = new Gson();
-        String json = gson.toJson(aggregator.getHotelInfo(hotelId));
+        String json = gson.toJson(syncAggregator.getHotelData(hotelId));
         return json;
     }
+    
+//    @RequestMapping(value="/infoY/{hotelId}", method = RequestMethod.GET)
+//    @ApiOperation(value = "getHotelDetails", notes = "Returns Hotel Name, Price, Reviews & Rating")
+//    public String getHotelInfo(@PathVariable String hotelId) throws Exception {
+//        Gson gson = new Gson();
+//        String json = gson.toJson(aggregator.getHotelInfo(hotelId));
+//        return json;
+//    }
 }

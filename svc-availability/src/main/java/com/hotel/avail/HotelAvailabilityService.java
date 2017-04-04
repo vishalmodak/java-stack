@@ -3,19 +3,13 @@ package com.hotel.avail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-
 @Service
 public class HotelAvailabilityService {
     
     @Autowired
     private HotelPricingClient pricingClient;
-
-    public HotelAvailabilityService() {
-
-    }
     
-    @HystrixCommand()
+//    @HystrixCommand()
     public HotelPricingInfo getHotelAvailability(String hotelId) throws Exception {
         Double price = pricingClient.getHotelPrice(hotelId);
         if (price.equals(Double.valueOf(0))) {

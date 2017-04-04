@@ -9,8 +9,7 @@ This applies relies on 3 services
 ##Application Links
 | Component | Link |
 |-----------| -----|
-| Eureka Server | http://localhost:7979 |
-| Swagger UI | http://localhost:7979/sdoc.jsp (requires internet access) |
+| Swagger UI | http://localhost:10000/swagger-ui.html (requires internet access) |
 | Hystrix Stream | http://localhost:7980/hystrix.stream | |
 
 ##To view hystrix metrics 

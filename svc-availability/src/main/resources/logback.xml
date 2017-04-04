@@ -11,7 +11,10 @@
     <logger name="org.apache.http" level="WARN">
         <appender-ref ref="CONSOLE"/>
     </logger>
-    <logger name="org.springframework" level="INFO"> -->
+    <logger name="org.springframework" level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <logger name="com.hotel.avail" level="DEBUG">
         <appender-ref ref="CONSOLE"/>
     </logger>
 </configuration>

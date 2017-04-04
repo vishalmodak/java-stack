@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -16,11 +15,11 @@ import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hotel.aggregator.clients.HotelAvailabilityClient;
 import com.hotel.aggregator.clients.HotelDetailsClient;
 import com.hotel.aggregator.clients.HotelRatingClient;
-import com.google.gson.Gson;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandKey;
@@ -32,8 +31,6 @@ public class HotelAggregatorService {
     private static final String DETAILS_GROUP = "details";
     private static final String RATING_GROUP = "rating";
     private static final String AVAIL_GROUP = "avail";
-    private static final String PRICING_GROUP = "pricing";
-    private static final int TIMEOUT = 2000;
     
     @Autowired
     private HotelDetailsClient hotelDetailsClient;
@@ -44,13 +41,10 @@ public class HotelAggregatorService {
     @Autowired
     private HotelAvailabilityClient hotelAvailabilityClient;
     
-//    @Autowired
-//    private HotelPricingClient hotelPricingClient;
 
     public Map<String, String> getHotelSummary(String hotelId) {
         List<Callable<AsyncResponse>> callables = new ArrayList<>();
         callables.add(new BackendServiceCallable("details", getHotelDetails(hotelId)));
-//        callables.add(new BackendServiceCallable("avail", getHotelAvailability(hotelId)));
         return doBackendAsyncServiceCall(callables);
     }
 
@@ -60,7 +54,6 @@ public class HotelAggregatorService {
         callables.add(new BackendServiceCallable("details", getHotelDetails(hotelId)));
         callables.add(new BackendServiceCallable("avail", getHotelAvailability(hotelId)));
         callables.add(new BackendServiceCallable("ratings", getHotelRatings(hotelId)));
-//        callables.add(new BackendServiceCallable("pricing", getHotelPricing(hotelId)));
         return doBackendAsyncServiceCall(callables);
     }
     
@@ -69,7 +62,7 @@ public class HotelAggregatorService {
         try {
             List<Future<AsyncResponse>> futures = executorService.invokeAll(callables);
             executorService.shutdown();
-            executorService.awaitTermination(TIMEOUT, TimeUnit.MILLISECONDS);
+            executorService.awaitTermination(2000, TimeUnit.MILLISECONDS);
             Map<String, String> result = new HashMap<String, String>();
             for (Future<AsyncResponse> future : futures) {
                 AsyncResponse response = future.get();
@@ -93,7 +86,6 @@ public class HotelAggregatorService {
                         .andCommandPropertiesDefaults(
                                 HystrixCommandProperties.Setter()
                                         .withCircuitBreakerErrorThresholdPercentage(20)
-                                        .withExecutionIsolationThreadTimeoutInMilliseconds(TIMEOUT)
                         )
         ) {
             @Override
@@ -118,7 +110,6 @@ public class HotelAggregatorService {
                         .andCommandPropertiesDefaults(
                                 HystrixCommandProperties.Setter()
                                         .withCircuitBreakerErrorThresholdPercentage(10)
-                                        .withExecutionIsolationThreadTimeoutInMilliseconds(TIMEOUT)
                         )
         ) {
             @Override
@@ -145,7 +136,6 @@ public class HotelAggregatorService {
                         .andCommandPropertiesDefaults(
                                 HystrixCommandProperties.Setter()
                                         .withCircuitBreakerErrorThresholdPercentage(5)
-                                        .withExecutionIsolationThreadTimeoutInMilliseconds(TIMEOUT)
                         )
         ) {
             @Override

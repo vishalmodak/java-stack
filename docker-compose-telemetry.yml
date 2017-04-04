@@ -1,0 +1,51 @@
+version: '2'
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./telemetry/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '-config.file=/etc/prometheus/prometheus.yml'
+      - '-log.level=debug'
+    external_links:
+      - consul
+    # links:
+    #   - node-exporter
+    ports:
+      - '9090:9090'
+    networks:
+      - hotelstack_hotel
+
+  node-exporter:
+    image: prom/node-exporter
+    container_name: node-exporter
+    ports:
+      - '9100:9100'
+    networks:
+      - hotelstack_hotel
+
+  grafana:
+    image: grafana/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=pass
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    networks:
+      - hotelstack_hotel
+
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - 9410:9410
+      - 9411:9411
+    networks:
+      - hotelstack_hotel
+      
+networks:
+  hotelstack_hotel:
+    external: true
