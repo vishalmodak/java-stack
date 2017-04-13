@@ -4,7 +4,7 @@ services:
     build:
       context: ./svc-aggregator
       args:
-        COLLECTOR_IP: 10.63.68.44
+        COLLECTOR_IP: 10.65.171.9
     image: svc-aggregator/consul
     container_name: hotel-aggregator
     networks:
@@ -16,11 +16,12 @@ services:
       - 9999:9999
     environment:
       CONSUL_HOST: consul
+      MEMCACHED_IP: memcached
   svc-details:
     build:
       context: ./svc-details
       args:
-        COLLECTOR_IP: 10.63.68.44
+        COLLECTOR_IP: 10.65.171.9
     image: svc-details/consul
     container_name: hotel-details
     external_links:
@@ -35,7 +36,7 @@ services:
     build:
       context: ./svc-pricing
       args:
-        COLLECTOR_IP: 10.63.68.44
+        COLLECTOR_IP: 10.65.171.9
     image: svc-pricing/consul
     container_name: hotel-pricing
     external_links:
@@ -50,7 +51,7 @@ services:
     build:
       context: ./svc-rating
       args:
-        COLLECTOR_IP: 10.63.68.44
+        COLLECTOR_IP: 10.65.171.9
     image: svc-rating/consul
     container_name: hotel-rating
     external_links:
@@ -65,7 +66,7 @@ services:
     build:
       context: ./svc-availability
       args:
-        COLLECTOR_IP: 10.63.68.44
+        COLLECTOR_IP: 10.65.171.9
     image: svc-availability/consul
     container_name: hotel-availability
     external_links:
@@ -76,7 +77,14 @@ services:
       - hotelstack_hotel
     environment:
       CONSUL_HOST: consul
-
+  memcached:
+    image: memcached:alpine
+    container_name: memcached
+    ports:
+      - "11211:11211"
+    networks:
+      - hotelstack_hotel
+      
 networks:
   hotelstack_hotel:
     external: true

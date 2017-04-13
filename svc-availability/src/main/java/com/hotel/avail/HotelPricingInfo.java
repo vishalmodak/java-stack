@@ -5,12 +5,14 @@ public class HotelPricingInfo {
     private String hotelId;
     private Double price;
     private String availability;
+    private Integer inventory;
     
-    public HotelPricingInfo(String hotelId, Double price, String availability) {
+    public HotelPricingInfo(String hotelId, Double price, String availability, Integer inventory) {
         super();
         this.hotelId = hotelId;
         this.price = price;
         this.availability = availability;
+        this.inventory = inventory;
     }
 
     public String getHotelId() {
@@ -23,6 +25,10 @@ public class HotelPricingInfo {
 
     public String getAvailability() {
         return availability;
+    }
+
+    public Integer getInventory() {
+        return inventory;
     }
 
     @Override

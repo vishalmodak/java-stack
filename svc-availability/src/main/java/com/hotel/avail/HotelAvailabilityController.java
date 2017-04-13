@@ -12,7 +12,7 @@ import io.swagger.annotations.ApiOperation;
 
 @EnableDiscoveryClient
 @RestController
-@Api(value = "hotelAvailability", description = "HotelAvailability API")
+@Api(value = "hotelAvailability")
 public class HotelAvailabilityController {
 
     @Autowired

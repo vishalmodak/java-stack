@@ -1,3 +1,6 @@
+memcached:
+  cache:
+    host: ${MEMCACHED_IP}
 spring:
   zipkin:
     base-url: http://zipkin:9411

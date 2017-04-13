@@ -1,3 +1,8 @@
 spring:
   application:
     name: svc-aggregator
+  cloud:
+    bootstrap:
+      enabled: true
+    consul:
+      enabled: true

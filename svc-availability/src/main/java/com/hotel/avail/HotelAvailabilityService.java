@@ -1,5 +1,6 @@
 package com.hotel.avail;
 
+import org.apache.commons.lang.math.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,17 +10,12 @@ public class HotelAvailabilityService {
     @Autowired
     private HotelPricingClient pricingClient;
     
-//    @HystrixCommand()
     public HotelPricingInfo getHotelAvailability(String hotelId) throws Exception {
         Double price = pricingClient.getHotelPrice(hotelId);
         if (price.equals(Double.valueOf(0))) {
-            return new HotelPricingInfo(hotelId, 0.0, "UNAVAILABLE");
+            return new HotelPricingInfo(hotelId, 0.0, "UNAVAILABLE", 0);
         }
-        return new HotelPricingInfo(hotelId, price, "AVAILABLE");
+        return new HotelPricingInfo(hotelId, price, "AVAILABLE", RandomUtils.nextInt(20));
     }
-    
-//    public Object defaultAvailability(String hotelId) {
-//        return new HotelPricingInfo(hotelId, null, "UNKNOWN");
-//    }
     
 }
