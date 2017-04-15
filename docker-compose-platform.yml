@@ -1,6 +1,7 @@
 version: "2"
 networks:
   hotel:
+
 services:
   consul1:
     image: consul
@@ -11,3 +12,8 @@ services:
      - "8600:8600/udp"
     networks:
       - hotel
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
+        tag: 'consul-log'

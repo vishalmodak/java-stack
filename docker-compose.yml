@@ -17,6 +17,12 @@ services:
     environment:
       CONSUL_HOST: consul
       MEMCACHED_IP: memcached
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
+        tag: 'aggregator-log'
+
   svc-details:
     build:
       context: ./svc-details
@@ -32,6 +38,12 @@ services:
       - hotelstack_hotel
     environment:
       CONSUL_HOST: consul
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
+        tag: 'details-log'
+
   svc-pricing:
     build:
       context: ./svc-pricing
@@ -47,6 +59,12 @@ services:
       - hotelstack_hotel
     environment:
       CONSUL_HOST: consul
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
+        tag: 'pricing-log'
+
   svc-rating:
     build:
       context: ./svc-rating
@@ -62,6 +80,12 @@ services:
       - hotelstack_hotel
     environment:
       CONSUL_HOST: consul
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
+        tag: 'rating-log'
+
   svc-availability:
     build:
       context: ./svc-availability
@@ -77,6 +101,12 @@ services:
       - hotelstack_hotel
     environment:
       CONSUL_HOST: consul
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
+        tag: 'availability-log'
+
   memcached:
     image: memcached:alpine
     container_name: memcached
@@ -84,7 +114,7 @@ services:
       - "11211:11211"
     networks:
       - hotelstack_hotel
-      
+
 networks:
   hotelstack_hotel:
     external: true
