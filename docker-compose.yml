@@ -5,7 +5,7 @@ services:
       context: ./svc-aggregator
       args:
         COLLECTOR_IP: 10.65.171.9
-    image: svc-aggregator/consul
+    image: svc-aggregator
     container_name: hotel-aggregator
     networks:
       - hotelstack_hotel
@@ -17,18 +17,18 @@ services:
     environment:
       CONSUL_HOST: consul
       MEMCACHED_IP: memcached
-    logging:
-      driver: gelf
-      options:
-        gelf-address: udp://localhost:12201
-        tag: 'aggregator-log'
+    # logging:
+    #   driver: gelf
+    #   options:
+    #     gelf-address: udp://localhost:12201
+    #     tag: 'aggregator-log'
 
   svc-details:
     build:
       context: ./svc-details
       args:
         COLLECTOR_IP: 10.65.171.9
-    image: svc-details/consul
+    image: svc-details
     container_name: hotel-details
     external_links:
       - zipkin:zipkin
@@ -38,18 +38,18 @@ services:
       - hotelstack_hotel
     environment:
       CONSUL_HOST: consul
-    logging:
-      driver: gelf
-      options:
-        gelf-address: udp://localhost:12201
-        tag: 'details-log'
+    # logging:
+    #   driver: gelf
+    #   options:
+    #     gelf-address: udp://localhost:12201
+    #     tag: 'details-log'
 
   svc-pricing:
     build:
       context: ./svc-pricing
       args:
         COLLECTOR_IP: 10.65.171.9
-    image: svc-pricing/consul
+    image: svc-pricing
     container_name: hotel-pricing
     external_links:
       - zipkin
@@ -59,18 +59,18 @@ services:
       - hotelstack_hotel
     environment:
       CONSUL_HOST: consul
-    logging:
-      driver: gelf
-      options:
-        gelf-address: udp://localhost:12201
-        tag: 'pricing-log'
+    # logging:
+    #   driver: gelf
+    #   options:
+    #     gelf-address: udp://localhost:12201
+    #     tag: 'pricing-log'
 
   svc-rating:
     build:
       context: ./svc-rating
       args:
         COLLECTOR_IP: 10.65.171.9
-    image: svc-rating/consul
+    image: svc-rating
     container_name: hotel-rating
     external_links:
       - zipkin
@@ -80,18 +80,18 @@ services:
       - hotelstack_hotel
     environment:
       CONSUL_HOST: consul
-    logging:
-      driver: gelf
-      options:
-        gelf-address: udp://localhost:12201
-        tag: 'rating-log'
+    # logging:
+    #   driver: gelf
+    #   options:
+    #     gelf-address: udp://localhost:12201
+    #     tag: 'rating-log'
 
   svc-availability:
     build:
       context: ./svc-availability
       args:
         COLLECTOR_IP: 10.65.171.9
-    image: svc-availability/consul
+    image: svc-availability
     container_name: hotel-availability
     external_links:
       - zipkin
@@ -101,11 +101,11 @@ services:
       - hotelstack_hotel
     environment:
       CONSUL_HOST: consul
-    logging:
-      driver: gelf
-      options:
-        gelf-address: udp://localhost:12201
-        tag: 'availability-log'
+    # logging:
+    #   driver: gelf
+    #   options:
+    #     gelf-address: udp://localhost:12201
+    #     tag: 'availability-log'
 
   memcached:
     image: memcached:alpine
