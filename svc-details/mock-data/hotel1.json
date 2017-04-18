@@ -1,0 +1,28 @@
+{
+    "hotelId": "1",
+    "hotelName": "Park Hyatt Tokyo",
+    "chainCode": "HY",
+    "hotelDescription": "An elegant oasis of space and calm, Park Hyatt Tokyo hotel is the ideal luxury destintion in Tokyo where guests can enjoy a 360 degree view of the bustling city and Mount Fuji. Occupaying the top 14 floors of the 52-storey tower, the hotel offers guests an unparalleled level of comfort and personalized service as well as top class gourmet dining options at the heart of the vibrant city.",
+    "amenities": [
+        "FITNESS_CENTER",
+        "HOT_TUB",
+        "WIFI",
+        "CASINO",
+        "HIGH_SPEED_INTERNET",
+        "JACUZZI"
+    ],
+    "starRating": "5",
+    "address": {
+        "street": "3-7-1-2 Nishi Shinjuku, Shinjuku-Ku",
+        "city": "Tokyo",
+        "state": null,
+        "stateCode": null,
+        "country": "Japan",
+        "countryCode": "JP",
+        "zipCode": "163-1055"
+    },
+    "coordinates": {
+        "latitude": 23.042353,
+        "longitude": -109.7040867
+    }
+}

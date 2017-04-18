@@ -1,0 +1,48 @@
+syntax = "proto2";
+
+option java_multiple_files = true;
+option java_outer_classname = "Hotel";
+
+package com.hotel.proto;
+
+message HotelDetails{
+    optional int64 hotelId = 1;
+    optional string hotelName = 2;
+    optional string hotelDescription = 3;
+    optional string chainCode = 4;
+    optional int64 starRating = 5;
+    optional Address address = 6;
+    optional Coordinates coordinates = 7;
+    repeated Amenity amenities = 8;
+}
+
+message Address {
+    optional string streetAddress = 1;
+    optional string city = 2;
+    optional string state = 3;
+    optional string stateCode = 4;
+    optional string country = 5;
+    optional string countryCode = 6;
+    optional string zipCode = 7;
+}
+
+message Coordinates {
+    optional double latitude = 1;
+    optional double longitude = 2;
+}
+
+enum Amenity {
+    WIFI = 0;
+    HIGH_SPEED_INTERNET = 1;
+    POOL = 2;
+    HOT_TUB = 3;
+    JACUZZI = 4;
+    RESTAURANT = 5;
+    FITNESS_CENTER = 6;
+    LAUNDRY = 7;
+    ROOM_SERVICE = 8;
+    CASINO = 9;
+    FREE_PARKING = 10;
+    SPA = 11;
+    PET_FRIENDLY = 12;
+}

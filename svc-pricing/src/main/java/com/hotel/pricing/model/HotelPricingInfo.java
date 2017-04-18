@@ -8,5 +8,6 @@ public class HotelPricingInfo {
     private Double taxes;
     private Double fees;
     private Double totalDiscount;
-    private List<DailyRate> dailyRates;
+    private List<Rate> rates;
+
 }

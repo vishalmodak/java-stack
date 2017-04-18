@@ -1,0 +1,28 @@
+{
+    "hotelId": "4",
+    "hotelName": "Bellagio",
+    "chainCode": "",
+    "hotelDescription": "Located in Las Vegas Strip within a mile (2 km) of Fashion Show Mall, Bellagio is within a few miles (5 km) of other popular sights such as University of Nevada-Las Vegas. This 5-star resort welcomes business and leisure travelers with 5 outdoor pools, a full-service spa, and a casino. Near the airport, it's also near Las Vegas Convention Center and Thomas and Mack Center",
+    "amenities": [
+        "FITNESS_CENTER",
+        "HOT_TUB",
+        "WIFI",
+        "CASINO",
+        "SPA",
+        "RESTAURANT"
+    ],
+    "starRating": "5",
+    "address": {
+        "street": "-115.1788938",
+        "city": "Las Vegas",
+        "state": "Nevada",
+        "stateCode": "NV",
+        "country": "United States",
+        "countryCode": "USA",
+        "zipCode": "89109-4303"
+    },
+    "coordinates": {
+        "latitude": 36.1126264,
+        "longitude": -115.1788938
+    }
+}

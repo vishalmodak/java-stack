@@ -2,7 +2,7 @@ spring:
   application:
     name: svc-aggregator
   cloud:
-    bootstrap:
-      enabled: true
     consul:
+      config:
+        fail-fast: false
       enabled: true

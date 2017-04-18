@@ -1,0 +1,29 @@
+{
+    "hotelId": "3",
+    "hotelName": "HYATT ZILARA CANCUN",
+    "chainCode": "HY",
+    "hotelDescription": "Situated on the widest stretch of beach in Zona Hotelera (Hotel Zone), Hyatt Zilara is an adults-only, all-inclusive resort in Cancun where guests experience traditional Mexican warmth in an intimate setting on the Caribbean Sea. ",
+    "amenities": [
+        "FITNESS_CENTER",
+        "HOT_TUB",
+        "WIFI",
+        "CASINO",
+        "HIGH_SPEED_INTERNET",
+        "JACUZZI",
+        "POOL"
+    ],
+    "starRating": "5",
+    "address": {
+        "street": "Blvd. Kukulcan KM 11.5, HZ",
+        "city": "Cancun",
+        "state": null,
+        "stateCode": null,
+        "country": "Mexico",
+        "countryCode": "MX",
+        "zipCode": "77500"
+    },
+    "coordinates": {
+        "latitude": 21.1190116,
+        "longitude": -86.7585277
+    }
+}

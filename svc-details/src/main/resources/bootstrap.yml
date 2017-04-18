@@ -1,3 +1,10 @@
 spring:
   application:
     name: svc-details
+  cloud:
+    consul:
+#      enabled: false
+#      binder:
+#        enabled: false
+      config:
+        fail-fast: false

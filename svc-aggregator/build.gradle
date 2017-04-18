@@ -17,6 +17,9 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 jar {
     baseName = 'svc-aggregator'
 }
@@ -39,6 +42,7 @@ bootRun {
 def prometheus_version="0.0.19"
 
 dependencies {
+    compile project(':hotel-protos')
     compile('org.springframework.cloud:spring-cloud-starter-zipkin:1.1.3.RELEASE')
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.boot:spring-boot-starter-cache")
@@ -65,5 +69,5 @@ eclipse {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.3'
+    gradleVersion = '3.4'
 }

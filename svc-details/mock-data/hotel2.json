@@ -1,0 +1,25 @@
+{
+    "hotelId": "2",
+    "hotelName": "Hyatt Ziva Los Cabos",
+    "chainCode": "HY",
+    "hotelDescription": "Perched on the tip of the Baja California Peninsula, Hyatt Ziva Los Cabos is a luxurious all-inclusive oasis for all-ages. Just up the Pacific Coast, between desert dunes and ocean rock formations, our magnificent beachfront resort offers spectacular views of the Sea of Cortez and is only minutes from San José del Cabo.",
+    "amenities": [
+        "FITNESS_CENTER",
+        "HOT_TUB",
+        "WIFI"
+    ],
+    "starRating": "4",
+    "address": {
+        "street": "Paseo Malecón Sn Lote 5",
+        "city": "San Jose del Cabo",
+        "state": null,
+        "stateCode": null,
+        "country": "Mexico",
+        "countryCode": "MX",
+        "zipCode": "23405"
+    },
+    "coordinates": {
+        "latitude": 23.042353,
+        "longitude": -109.7040867
+    }
+}

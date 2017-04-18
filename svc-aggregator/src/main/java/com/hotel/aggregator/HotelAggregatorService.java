@@ -90,7 +90,7 @@ public class HotelAggregatorService {
         ) {
             @Override
             protected String run() throws Exception {
-                return hotelDetailsClient.getHotelDetails(hotelId);
+                return hotelDetailsClient.getHotelDetails(hotelId).toString();
             }
             @Override
             protected String getFallback() {

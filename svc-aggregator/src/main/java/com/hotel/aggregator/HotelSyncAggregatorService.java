@@ -34,7 +34,7 @@ public class HotelSyncAggregatorService {
     private HotelAvailabilityClient hotelAvailabilityClient;
 
     public Map<String, String> getHotelData(String hotelId) {
-        Map<String, String> result = new HashMap<String, String>();
+        Map<String, String> result = new HashMap<>();
         result.put(DETAILS_GROUP, getHotelDetails(hotelId));
         result.put(RATING_GROUP, getHotelRatings(hotelId));
         result.put(AVAIL_GROUP, getHotelAvailability(hotelId));
@@ -65,7 +65,7 @@ public class HotelSyncAggregatorService {
 
     @HystrixCommand(fallbackMethod = "defaultDetails")
     public String getHotelDetails(final String hotelId) {
-        return hotelDetailsClient.getHotelDetails(hotelId);
+        return hotelDetailsClient.getHotelDetails(hotelId).toString();
     }
     
     public String defaultDetails() {

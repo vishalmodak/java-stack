@@ -1,0 +1,1 @@
+include 'hotel-protos', 'svc-aggregator', 'svc-details', 'svc-pricing', 'svc-rating', 'svc-availability'

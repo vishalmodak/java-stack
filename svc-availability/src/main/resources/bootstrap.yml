@@ -1,3 +1,7 @@
 spring:
   application:
     name: svc-availability
+  cloud:
+    consul:
+      config:
+        fail-fast: false

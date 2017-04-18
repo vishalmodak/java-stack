@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.hotel.proto.HotelDetails;
+
 @FeignClient("svc-details")
 public interface HotelDetailsClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/hotel/details/{hotelId}")
+    @RequestMapping(method = RequestMethod.GET, value = "/hotel/details/{hotelId}", consumes={"application/x-protobuf"})
     @Cacheable("details")
-    String getHotelDetails(@PathVariable("hotelId") String hotelId);
+    HotelDetails getHotelDetails(@PathVariable("hotelId") String hotelId);
     
 }

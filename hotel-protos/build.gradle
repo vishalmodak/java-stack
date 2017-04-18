@@ -1,0 +1,84 @@
+buildscript {
+    ext.protobuf_version = '3.0.0'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.1'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'com.google.protobuf'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    sourceSets.main.java.srcDirs = ['gen/main/java']
+    exclude('*.proto')
+    baseName = 'hotel-protos'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'gen/main/java'
+        }
+    }
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+    }
+}
+
+protobuf {
+    generatedFilesBaseDir = "$projectDir/gen"
+
+    protoc {
+        artifact = "com.google.protobuf:protoc:$protobuf_version"
+    }
+
+    generateProtoTasks {
+        all().each { task ->
+
+            // help gradle to understand when protobuf is generated
+            if (task.name == "generateProto") {
+                task.outputs.upToDateWhen {
+                    new File(generatedFilesBaseDir).exists()
+                }
+            }
+        }
+
+        // task to clean generated code
+        task deleteGeneratedProto << { delete generatedFilesBaseDir }
+
+        // task to recompile proto
+        task recompileProto {}
+        recompileProto.dependsOn(deleteGeneratedProto)
+        recompileProto.dependsOn(generateProto)
+
+        // make sure that java compilation will happen after proto is there
+        compileJava.dependsOn(generateProto)
+
+        // make sure that clean task also removes generated code
+        clean.dependsOn(deleteGeneratedProto)
+    }
+
+}
+
+dependencies {
+    compile "com.google.protobuf:protobuf-java:$protobuf_version"
+    compile "com.google.protobuf:protobuf-java-util:3.2.0"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.4'
+}
