@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 option java_multiple_files = true;
 option java_outer_classname = "Hotel";
@@ -6,29 +6,29 @@ option java_outer_classname = "Hotel";
 package com.hotel.proto;
 
 message HotelDetails{
-    optional int64 hotelId = 1;
-    optional string hotelName = 2;
-    optional string hotelDescription = 3;
-    optional string chainCode = 4;
-    optional int64 starRating = 5;
-    optional Address address = 6;
-    optional Coordinates coordinates = 7;
+    int64 hotelId = 1;
+    string hotelName = 2;
+    string hotelDescription = 3;
+    string chainCode = 4;
+    int64 starRating = 5;
+    Address address = 6;
+    Coordinates coordinates = 7;
     repeated Amenity amenities = 8;
 }
 
 message Address {
-    optional string streetAddress = 1;
-    optional string city = 2;
-    optional string state = 3;
-    optional string stateCode = 4;
-    optional string country = 5;
-    optional string countryCode = 6;
-    optional string zipCode = 7;
+    string streetAddress = 1;
+    string city = 2;
+    string state = 3;
+    string stateCode = 4;
+    string country = 5;
+    string countryCode = 6;
+    string zipCode = 7;
 }
 
 message Coordinates {
-    optional double latitude = 1;
-    optional double longitude = 2;
+    double latitude = 1;
+    double longitude = 2;
 }
 
 enum Amenity {

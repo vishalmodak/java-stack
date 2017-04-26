@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "Hotel";
+
+import "google/protobuf/timestamp.proto";
+
+package com.hotel.rate.proto;
+
+message HotelPricePreview {
+    int64 hotelId = 1;
+    Availability availabilityStatus = 2;
+    double displayPrice = 3;
+}
+
+message HotelPriceInfo {
+    int64 hotelId = 1;
+    google.protobuf.Timestamp checkinDate = 2;
+    google.protobuf.Timestamp checkoutDate = 3;
+    double totalPrice = 4;
+    double taxes = 5;
+    double fees = 6;
+    double totalDiscount = 7;
+    double avgNightlyRate = 8;
+    repeated RoomRate roomRates = 9;
+    Availability availabilityStatus = 10;
+}
+
+message RoomRate {
+    RoomType roomType = 1;
+    RateType rateType = 2;
+    repeated DailyRate dailyRates = 3;
+    int64 roomsAvailable = 4;
+}
+
+message DailyRate {
+    double baseRate = 1;
+    double markup = 2;
+    double discount = 3;
+}
+
+enum RoomType {
+    ONE_KING = 0;
+    DOUBLE_BED = 1;
+    PENTHOUSE = 2;
+    EXECUTIVE = 3;
+}
+
+enum RateType {
+    STANDARD = 0;
+    DELUXE = 1;
+    CLUB = 2;
+}
+
+enum Availability {
+    AVAILABLE = 0;
+    UNAVAILABLE = 1;
+    UNKNOWN = 2;
+}

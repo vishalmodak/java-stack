@@ -55,7 +55,7 @@ public final class Hotel {
       "\022\016\n\nRESTAURANT\020\005\022\022\n\016FITNESS_CENTER\020\006\022\013\n\007" +
       "LAUNDRY\020\007\022\020\n\014ROOM_SERVICE\020\010\022\n\n\006CASINO\020\t\022" +
       "\020\n\014FREE_PARKING\020\n\022\007\n\003SPA\020\013\022\020\n\014PET_FRIEND" +
-      "LY\020\014B\tB\005HotelP\001"
+      "LY\020\014B\tB\005HotelP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

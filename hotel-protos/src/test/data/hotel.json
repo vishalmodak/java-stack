@@ -1,0 +1,18 @@
+{
+  "hotelId": "1",
+  "hotelName": "Ziva",
+  "hotelDescription": "blah",
+  "chainCode": "HY",
+  "starRating": "4",
+  "address": {
+    "streetAddress": "Paseo Malecón Sn Lote 5",
+    "city": "San Jose del Cabo",
+    "country": "Mexico",
+    "zipCode": "23405"
+  },
+  "coordinates": {
+    "latitude": 23.042353,
+    "longitude": -109.7040867
+  },
+  "amenities": ["WIFI", "FITNESS_CENTER", "HOT_TUB"]
+}

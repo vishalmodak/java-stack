@@ -1,13 +1,19 @@
 package com.hotel.proto;
 
+import static org.junit.Assert.assertEquals;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import org.junit.Test;
+
 import com.google.protobuf.util.JsonFormat;
 
-public class HotelDetailsTest {
 
-    public static void main(String[] args) throws Exception {
+public class HotelProtosTest {
+
+    @Test
+    public void jsonSerialization() throws Exception {
         HotelDetails details = HotelDetails.newBuilder()
                                             .setHotelName("Ziva")
                                             .setHotelId(1L)
@@ -25,11 +31,12 @@ public class HotelDetailsTest {
                                             .addAmenities(Amenity.HOT_TUB)
                                             .setCoordinates(Coordinates.newBuilder().setLatitude(23.042353d).setLongitude(-109.7040867d).build())
                                             .build();
-        System.out.println(JsonFormat.printer().print(details));
+        String fileName = "./src/test/data/hotel.json";
+        Files.write(Paths.get(fileName), JsonFormat.printer().print(details).getBytes());
         
         HotelDetails.Builder builder = HotelDetails.newBuilder();
-        String json = new String(Files.readAllBytes(Paths.get("hotel1.json")));
+        String json = new String(Files.readAllBytes(Paths.get(fileName)));
         JsonFormat.parser().ignoringUnknownFields().merge(json, builder.clear());
-        System.out.println(builder.build().toString());
+        assertEquals(details, builder.build());
     }
 }

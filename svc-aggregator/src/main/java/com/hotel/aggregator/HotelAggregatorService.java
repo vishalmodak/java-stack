@@ -115,8 +115,7 @@ public class HotelAggregatorService {
             @Override
             protected String run() throws Exception {
                 Type type = new TypeToken<HashMap<String, String>>(){}.getType();
-                Map<String, String> map = new Gson().fromJson(hotelAvailabilityClient.getHotelAvailability(hotelId), type);
-                return map.get("price") + ", " + map.get("availability");
+                return hotelAvailabilityClient.getHotelAvailability(hotelId).toString();
             }
             @Override
             protected String getFallback() {
@@ -140,7 +139,7 @@ public class HotelAggregatorService {
         ) {
             @Override
             protected String run() throws Exception {
-                return hotelRatingClient.getHotelRating(hotelId);
+                return hotelRatingClient.getHotelRating(hotelId).toString();
             }
             @Override
             protected String getFallback() {

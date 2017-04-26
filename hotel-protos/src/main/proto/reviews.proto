@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "Hotel";
+
+package com.hotel.reviews.proto;
+
+message HotelReviewInfo {
+    int64 hotelId = 1;
+    double hotelReviewRating = 2;
+    repeated Review reviews = 3;
+}
+
+message Review {
+    int64 reviewId = 1;
+    int64 reviewRating = 2;
+    string reviewText = 3;
+}

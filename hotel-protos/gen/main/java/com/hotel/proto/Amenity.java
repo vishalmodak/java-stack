@@ -60,6 +60,7 @@ public enum Amenity
    * <code>PET_FRIENDLY = 12;</code>
    */
   PET_FRIENDLY(12),
+  UNRECOGNIZED(-1),
   ;
 
   /**
@@ -117,6 +118,10 @@ public enum Amenity
 
 
   public final int getNumber() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalArgumentException(
+          "Can't get the number of an unknown enum value.");
+    }
     return value;
   }
 
@@ -169,8 +174,7 @@ public enum Amenity
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.hotel.proto.Hotel.getDescriptor()
-        .getEnumTypes().get(0);
+    return com.hotel.proto.Hotel.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final Amenity[] VALUES = values();
@@ -180,6 +184,9 @@ public enum Amenity
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
         "EnumValueDescriptor is not for this type.");
+    }
+    if (desc.getIndex() == -1) {
+      return UNRECOGNIZED;
     }
     return VALUES[desc.getIndex()];
   }

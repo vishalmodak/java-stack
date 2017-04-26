@@ -32,7 +32,7 @@ public class SwaggerConfig {
     
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("HotelDetails API")
+                .title("HotelReviews API")
                 .build();
     }
 }

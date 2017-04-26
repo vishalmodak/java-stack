@@ -8,99 +8,71 @@ public interface AddressOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional string streetAddress = 1;</code>
-   */
-  boolean hasStreetAddress();
-  /**
-   * <code>optional string streetAddress = 1;</code>
+   * <code>string streetAddress = 1;</code>
    */
   java.lang.String getStreetAddress();
   /**
-   * <code>optional string streetAddress = 1;</code>
+   * <code>string streetAddress = 1;</code>
    */
   com.google.protobuf.ByteString
       getStreetAddressBytes();
 
   /**
-   * <code>optional string city = 2;</code>
-   */
-  boolean hasCity();
-  /**
-   * <code>optional string city = 2;</code>
+   * <code>string city = 2;</code>
    */
   java.lang.String getCity();
   /**
-   * <code>optional string city = 2;</code>
+   * <code>string city = 2;</code>
    */
   com.google.protobuf.ByteString
       getCityBytes();
 
   /**
-   * <code>optional string state = 3;</code>
-   */
-  boolean hasState();
-  /**
-   * <code>optional string state = 3;</code>
+   * <code>string state = 3;</code>
    */
   java.lang.String getState();
   /**
-   * <code>optional string state = 3;</code>
+   * <code>string state = 3;</code>
    */
   com.google.protobuf.ByteString
       getStateBytes();
 
   /**
-   * <code>optional string stateCode = 4;</code>
-   */
-  boolean hasStateCode();
-  /**
-   * <code>optional string stateCode = 4;</code>
+   * <code>string stateCode = 4;</code>
    */
   java.lang.String getStateCode();
   /**
-   * <code>optional string stateCode = 4;</code>
+   * <code>string stateCode = 4;</code>
    */
   com.google.protobuf.ByteString
       getStateCodeBytes();
 
   /**
-   * <code>optional string country = 5;</code>
-   */
-  boolean hasCountry();
-  /**
-   * <code>optional string country = 5;</code>
+   * <code>string country = 5;</code>
    */
   java.lang.String getCountry();
   /**
-   * <code>optional string country = 5;</code>
+   * <code>string country = 5;</code>
    */
   com.google.protobuf.ByteString
       getCountryBytes();
 
   /**
-   * <code>optional string countryCode = 6;</code>
-   */
-  boolean hasCountryCode();
-  /**
-   * <code>optional string countryCode = 6;</code>
+   * <code>string countryCode = 6;</code>
    */
   java.lang.String getCountryCode();
   /**
-   * <code>optional string countryCode = 6;</code>
+   * <code>string countryCode = 6;</code>
    */
   com.google.protobuf.ByteString
       getCountryCodeBytes();
 
   /**
-   * <code>optional string zipCode = 7;</code>
-   */
-  boolean hasZipCode();
-  /**
-   * <code>optional string zipCode = 7;</code>
+   * <code>string zipCode = 7;</code>
    */
   java.lang.String getZipCode();
   /**
-   * <code>optional string zipCode = 7;</code>
+   * <code>string zipCode = 7;</code>
    */
   com.google.protobuf.ByteString
       getZipCodeBytes();

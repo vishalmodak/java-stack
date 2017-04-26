@@ -22,7 +22,7 @@ public  final class Coordinates extends
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private Coordinates(
       com.google.protobuf.CodedInputStream input,
@@ -30,8 +30,6 @@ public  final class Coordinates extends
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -41,19 +39,18 @@ public  final class Coordinates extends
             done = true;
             break;
           default: {
-            if (!parseUnknownField(input, unknownFields,
-                                   extensionRegistry, tag)) {
+            if (!input.skipField(tag)) {
               done = true;
             }
             break;
           }
           case 9: {
-            bitField0_ |= 0x00000001;
+
             latitude_ = input.readDouble();
             break;
           }
           case 17: {
-            bitField0_ |= 0x00000002;
+
             longitude_ = input.readDouble();
             break;
           }
@@ -65,7 +62,6 @@ public  final class Coordinates extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -81,17 +77,10 @@ public  final class Coordinates extends
             com.hotel.proto.Coordinates.class, com.hotel.proto.Coordinates.Builder.class);
   }
 
-  private int bitField0_;
   public static final int LATITUDE_FIELD_NUMBER = 1;
   private double latitude_;
   /**
-   * <code>optional double latitude = 1;</code>
-   */
-  public boolean hasLatitude() {
-    return ((bitField0_ & 0x00000001) == 0x00000001);
-  }
-  /**
-   * <code>optional double latitude = 1;</code>
+   * <code>double latitude = 1;</code>
    */
   public double getLatitude() {
     return latitude_;
@@ -100,13 +89,7 @@ public  final class Coordinates extends
   public static final int LONGITUDE_FIELD_NUMBER = 2;
   private double longitude_;
   /**
-   * <code>optional double longitude = 2;</code>
-   */
-  public boolean hasLongitude() {
-    return ((bitField0_ & 0x00000002) == 0x00000002);
-  }
-  /**
-   * <code>optional double longitude = 2;</code>
+   * <code>double longitude = 2;</code>
    */
   public double getLongitude() {
     return longitude_;
@@ -124,13 +107,12 @@ public  final class Coordinates extends
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (latitude_ != 0D) {
       output.writeDouble(1, latitude_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (longitude_ != 0D) {
       output.writeDouble(2, longitude_);
     }
-    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -138,15 +120,14 @@ public  final class Coordinates extends
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (latitude_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(1, latitude_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (longitude_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(2, longitude_);
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -163,21 +144,14 @@ public  final class Coordinates extends
     com.hotel.proto.Coordinates other = (com.hotel.proto.Coordinates) obj;
 
     boolean result = true;
-    result = result && (hasLatitude() == other.hasLatitude());
-    if (hasLatitude()) {
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLatitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLatitude()));
-    }
-    result = result && (hasLongitude() == other.hasLongitude());
-    if (hasLongitude()) {
-      result = result && (
-          java.lang.Double.doubleToLongBits(getLongitude())
-          == java.lang.Double.doubleToLongBits(
-              other.getLongitude()));
-    }
-    result = result && unknownFields.equals(other.unknownFields);
+    result = result && (
+        java.lang.Double.doubleToLongBits(getLatitude())
+        == java.lang.Double.doubleToLongBits(
+            other.getLatitude()));
+    result = result && (
+        java.lang.Double.doubleToLongBits(getLongitude())
+        == java.lang.Double.doubleToLongBits(
+            other.getLongitude()));
     return result;
   }
 
@@ -187,17 +161,13 @@ public  final class Coordinates extends
       return memoizedHashCode;
     }
     int hash = 41;
-    hash = (19 * hash) + getDescriptorForType().hashCode();
-    if (hasLatitude()) {
-      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLatitude()));
-    }
-    if (hasLongitude()) {
-      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getLongitude()));
-    }
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getLatitude()));
+    hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getLongitude()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -317,9 +287,9 @@ public  final class Coordinates extends
     public Builder clear() {
       super.clear();
       latitude_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       longitude_ = 0D;
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       return this;
     }
 
@@ -342,17 +312,8 @@ public  final class Coordinates extends
 
     public com.hotel.proto.Coordinates buildPartial() {
       com.hotel.proto.Coordinates result = new com.hotel.proto.Coordinates(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-        to_bitField0_ |= 0x00000001;
-      }
       result.latitude_ = latitude_;
-      if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-        to_bitField0_ |= 0x00000002;
-      }
       result.longitude_ = longitude_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -394,13 +355,12 @@ public  final class Coordinates extends
 
     public Builder mergeFrom(com.hotel.proto.Coordinates other) {
       if (other == com.hotel.proto.Coordinates.getDefaultInstance()) return this;
-      if (other.hasLatitude()) {
+      if (other.getLatitude() != 0D) {
         setLatitude(other.getLatitude());
       }
-      if (other.hasLongitude()) {
+      if (other.getLongitude() != 0D) {
         setLongitude(other.getLongitude());
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -426,35 +386,28 @@ public  final class Coordinates extends
       }
       return this;
     }
-    private int bitField0_;
 
     private double latitude_ ;
     /**
-     * <code>optional double latitude = 1;</code>
-     */
-    public boolean hasLatitude() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>optional double latitude = 1;</code>
+     * <code>double latitude = 1;</code>
      */
     public double getLatitude() {
       return latitude_;
     }
     /**
-     * <code>optional double latitude = 1;</code>
+     * <code>double latitude = 1;</code>
      */
     public Builder setLatitude(double value) {
-      bitField0_ |= 0x00000001;
+      
       latitude_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional double latitude = 1;</code>
+     * <code>double latitude = 1;</code>
      */
     public Builder clearLatitude() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       latitude_ = 0D;
       onChanged();
       return this;
@@ -462,43 +415,37 @@ public  final class Coordinates extends
 
     private double longitude_ ;
     /**
-     * <code>optional double longitude = 2;</code>
-     */
-    public boolean hasLongitude() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional double longitude = 2;</code>
+     * <code>double longitude = 2;</code>
      */
     public double getLongitude() {
       return longitude_;
     }
     /**
-     * <code>optional double longitude = 2;</code>
+     * <code>double longitude = 2;</code>
      */
     public Builder setLongitude(double value) {
-      bitField0_ |= 0x00000002;
+      
       longitude_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional double longitude = 2;</code>
+     * <code>double longitude = 2;</code>
      */
     public Builder clearLongitude() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       longitude_ = 0D;
       onChanged();
       return this;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -515,7 +462,7 @@ public  final class Coordinates extends
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<Coordinates>
+  private static final com.google.protobuf.Parser<Coordinates>
       PARSER = new com.google.protobuf.AbstractParser<Coordinates>() {
     public Coordinates parsePartialFrom(
         com.google.protobuf.CodedInputStream input,

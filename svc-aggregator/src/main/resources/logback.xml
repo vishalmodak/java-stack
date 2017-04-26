@@ -11,16 +11,13 @@
     <logger name="org.apache.http" level="WARN">
         <appender-ref ref="CONSOLE"/>
     </logger>
-    <logger name="org.springframework" level="INFO">
-        <appender-ref ref="CONSOLE"/>
-    </logger>
-    <logger name="netflix" level="INFO">
+    <logger name="org.springframework.cloud.netflix" level="DEBUG">
         <appender-ref ref="CONSOLE"/>
     </logger>
 <!--     <logger name="org.springframework.cache.caffeine" level="DEBUG"> -->
 <!--         <appender-ref ref="CONSOLE"/> -->
 <!--     </logger> -->
-    <logger name="com.hotel" level="INFO">
+    <logger name="com.hotel.aggregator" level="INFO">
         <appender-ref ref="CONSOLE"/>
     </logger>
 </configuration>

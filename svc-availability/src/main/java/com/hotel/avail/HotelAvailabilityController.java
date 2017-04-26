@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hotel.rate.proto.HotelPricePreview;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -23,9 +25,9 @@ public class HotelAvailabilityController {
         return "Greetings from Hotel Availability Service! ";
     }
     
-    @RequestMapping(value="/hotel/avail/{hotelId}", method=RequestMethod.GET)
+    @RequestMapping(value="/hotel/avail/{hotelId}", method=RequestMethod.GET, produces={"application/json","application/x-protobuf"})
     @ApiOperation(value = "getHotelAvailability", notes = "Returns the price & availability for a given hotel")
-    public HotelPricingInfo getHotelAvailability(@PathVariable String hotelId) throws Exception {
+    public HotelPricePreview getHotelAvailability(@PathVariable String hotelId) throws Exception {
         return service.getHotelAvailability(hotelId);
     }
     

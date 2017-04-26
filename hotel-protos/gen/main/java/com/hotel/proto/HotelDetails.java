@@ -26,7 +26,7 @@ public  final class HotelDetails extends
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private HotelDetails(
       com.google.protobuf.CodedInputStream input,
@@ -34,8 +34,6 @@ public  final class HotelDetails extends
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -45,78 +43,72 @@ public  final class HotelDetails extends
             done = true;
             break;
           default: {
-            if (!parseUnknownField(input, unknownFields,
-                                   extensionRegistry, tag)) {
+            if (!input.skipField(tag)) {
               done = true;
             }
             break;
           }
           case 8: {
-            bitField0_ |= 0x00000001;
+
             hotelId_ = input.readInt64();
             break;
           }
           case 18: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000002;
-            hotelName_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            hotelName_ = s;
             break;
           }
           case 26: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000004;
-            hotelDescription_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            hotelDescription_ = s;
             break;
           }
           case 34: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000008;
-            chainCode_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            chainCode_ = s;
             break;
           }
           case 40: {
-            bitField0_ |= 0x00000010;
+
             starRating_ = input.readInt64();
             break;
           }
           case 50: {
             com.hotel.proto.Address.Builder subBuilder = null;
-            if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            if (address_ != null) {
               subBuilder = address_.toBuilder();
             }
-            address_ = input.readMessage(com.hotel.proto.Address.PARSER, extensionRegistry);
+            address_ = input.readMessage(com.hotel.proto.Address.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(address_);
               address_ = subBuilder.buildPartial();
             }
-            bitField0_ |= 0x00000020;
+
             break;
           }
           case 58: {
             com.hotel.proto.Coordinates.Builder subBuilder = null;
-            if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            if (coordinates_ != null) {
               subBuilder = coordinates_.toBuilder();
             }
-            coordinates_ = input.readMessage(com.hotel.proto.Coordinates.PARSER, extensionRegistry);
+            coordinates_ = input.readMessage(com.hotel.proto.Coordinates.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(coordinates_);
               coordinates_ = subBuilder.buildPartial();
             }
-            bitField0_ |= 0x00000040;
+
             break;
           }
           case 64: {
             int rawValue = input.readEnum();
-            com.hotel.proto.Amenity value = com.hotel.proto.Amenity.valueOf(rawValue);
-            if (value == null) {
-              unknownFields.mergeVarintField(8, rawValue);
-            } else {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                amenities_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              amenities_.add(rawValue);
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              amenities_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000080;
             }
+            amenities_.add(rawValue);
             break;
           }
           case 66: {
@@ -124,16 +116,11 @@ public  final class HotelDetails extends
             int oldLimit = input.pushLimit(length);
             while(input.getBytesUntilLimit() > 0) {
               int rawValue = input.readEnum();
-              com.hotel.proto.Amenity value = com.hotel.proto.Amenity.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(8, rawValue);
-              } else {
-                if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                  amenities_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000080;
-                }
-                amenities_.add(rawValue);
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                amenities_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000080;
               }
+              amenities_.add(rawValue);
             }
             input.popLimit(oldLimit);
             break;
@@ -149,7 +136,6 @@ public  final class HotelDetails extends
       if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         amenities_ = java.util.Collections.unmodifiableList(amenities_);
       }
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -169,13 +155,7 @@ public  final class HotelDetails extends
   public static final int HOTELID_FIELD_NUMBER = 1;
   private long hotelId_;
   /**
-   * <code>optional int64 hotelId = 1;</code>
-   */
-  public boolean hasHotelId() {
-    return ((bitField0_ & 0x00000001) == 0x00000001);
-  }
-  /**
-   * <code>optional int64 hotelId = 1;</code>
+   * <code>int64 hotelId = 1;</code>
    */
   public long getHotelId() {
     return hotelId_;
@@ -184,13 +164,7 @@ public  final class HotelDetails extends
   public static final int HOTELNAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object hotelName_;
   /**
-   * <code>optional string hotelName = 2;</code>
-   */
-  public boolean hasHotelName() {
-    return ((bitField0_ & 0x00000002) == 0x00000002);
-  }
-  /**
-   * <code>optional string hotelName = 2;</code>
+   * <code>string hotelName = 2;</code>
    */
   public java.lang.String getHotelName() {
     java.lang.Object ref = hotelName_;
@@ -200,14 +174,12 @@ public  final class HotelDetails extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        hotelName_ = s;
-      }
+      hotelName_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string hotelName = 2;</code>
+   * <code>string hotelName = 2;</code>
    */
   public com.google.protobuf.ByteString
       getHotelNameBytes() {
@@ -226,13 +198,7 @@ public  final class HotelDetails extends
   public static final int HOTELDESCRIPTION_FIELD_NUMBER = 3;
   private volatile java.lang.Object hotelDescription_;
   /**
-   * <code>optional string hotelDescription = 3;</code>
-   */
-  public boolean hasHotelDescription() {
-    return ((bitField0_ & 0x00000004) == 0x00000004);
-  }
-  /**
-   * <code>optional string hotelDescription = 3;</code>
+   * <code>string hotelDescription = 3;</code>
    */
   public java.lang.String getHotelDescription() {
     java.lang.Object ref = hotelDescription_;
@@ -242,14 +208,12 @@ public  final class HotelDetails extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        hotelDescription_ = s;
-      }
+      hotelDescription_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string hotelDescription = 3;</code>
+   * <code>string hotelDescription = 3;</code>
    */
   public com.google.protobuf.ByteString
       getHotelDescriptionBytes() {
@@ -268,13 +232,7 @@ public  final class HotelDetails extends
   public static final int CHAINCODE_FIELD_NUMBER = 4;
   private volatile java.lang.Object chainCode_;
   /**
-   * <code>optional string chainCode = 4;</code>
-   */
-  public boolean hasChainCode() {
-    return ((bitField0_ & 0x00000008) == 0x00000008);
-  }
-  /**
-   * <code>optional string chainCode = 4;</code>
+   * <code>string chainCode = 4;</code>
    */
   public java.lang.String getChainCode() {
     java.lang.Object ref = chainCode_;
@@ -284,14 +242,12 @@ public  final class HotelDetails extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        chainCode_ = s;
-      }
+      chainCode_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string chainCode = 4;</code>
+   * <code>string chainCode = 4;</code>
    */
   public com.google.protobuf.ByteString
       getChainCodeBytes() {
@@ -310,13 +266,7 @@ public  final class HotelDetails extends
   public static final int STARRATING_FIELD_NUMBER = 5;
   private long starRating_;
   /**
-   * <code>optional int64 starRating = 5;</code>
-   */
-  public boolean hasStarRating() {
-    return ((bitField0_ & 0x00000010) == 0x00000010);
-  }
-  /**
-   * <code>optional int64 starRating = 5;</code>
+   * <code>int64 starRating = 5;</code>
    */
   public long getStarRating() {
     return starRating_;
@@ -325,43 +275,43 @@ public  final class HotelDetails extends
   public static final int ADDRESS_FIELD_NUMBER = 6;
   private com.hotel.proto.Address address_;
   /**
-   * <code>optional .com.hotel.proto.Address address = 6;</code>
+   * <code>.com.hotel.proto.Address address = 6;</code>
    */
   public boolean hasAddress() {
-    return ((bitField0_ & 0x00000020) == 0x00000020);
+    return address_ != null;
   }
   /**
-   * <code>optional .com.hotel.proto.Address address = 6;</code>
+   * <code>.com.hotel.proto.Address address = 6;</code>
    */
   public com.hotel.proto.Address getAddress() {
     return address_ == null ? com.hotel.proto.Address.getDefaultInstance() : address_;
   }
   /**
-   * <code>optional .com.hotel.proto.Address address = 6;</code>
+   * <code>.com.hotel.proto.Address address = 6;</code>
    */
   public com.hotel.proto.AddressOrBuilder getAddressOrBuilder() {
-    return address_ == null ? com.hotel.proto.Address.getDefaultInstance() : address_;
+    return getAddress();
   }
 
   public static final int COORDINATES_FIELD_NUMBER = 7;
   private com.hotel.proto.Coordinates coordinates_;
   /**
-   * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+   * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
    */
   public boolean hasCoordinates() {
-    return ((bitField0_ & 0x00000040) == 0x00000040);
+    return coordinates_ != null;
   }
   /**
-   * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+   * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
    */
   public com.hotel.proto.Coordinates getCoordinates() {
     return coordinates_ == null ? com.hotel.proto.Coordinates.getDefaultInstance() : coordinates_;
   }
   /**
-   * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+   * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
    */
   public com.hotel.proto.CoordinatesOrBuilder getCoordinatesOrBuilder() {
-    return coordinates_ == null ? com.hotel.proto.Coordinates.getDefaultInstance() : coordinates_;
+    return getCoordinates();
   }
 
   public static final int AMENITIES_FIELD_NUMBER = 8;
@@ -372,7 +322,7 @@ public  final class HotelDetails extends
               java.lang.Integer, com.hotel.proto.Amenity>() {
             public com.hotel.proto.Amenity convert(java.lang.Integer from) {
               com.hotel.proto.Amenity result = com.hotel.proto.Amenity.valueOf(from);
-              return result == null ? com.hotel.proto.Amenity.WIFI : result;
+              return result == null ? com.hotel.proto.Amenity.UNRECOGNIZED : result;
             }
           };
   /**
@@ -394,6 +344,20 @@ public  final class HotelDetails extends
   public com.hotel.proto.Amenity getAmenities(int index) {
     return amenities_converter_.convert(amenities_.get(index));
   }
+  /**
+   * <code>repeated .com.hotel.proto.Amenity amenities = 8;</code>
+   */
+  public java.util.List<java.lang.Integer>
+  getAmenitiesValueList() {
+    return amenities_;
+  }
+  /**
+   * <code>repeated .com.hotel.proto.Amenity amenities = 8;</code>
+   */
+  public int getAmenitiesValue(int index) {
+    return amenities_.get(index);
+  }
+  private int amenitiesMemoizedSerializedSize;
 
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
@@ -407,31 +371,35 @@ public  final class HotelDetails extends
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    getSerializedSize();
+    if (hotelId_ != 0L) {
       output.writeInt64(1, hotelId_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (!getHotelNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hotelName_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (!getHotelDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, hotelDescription_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (!getChainCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, chainCode_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (starRating_ != 0L) {
       output.writeInt64(5, starRating_);
     }
-    if (((bitField0_ & 0x00000020) == 0x00000020)) {
+    if (address_ != null) {
       output.writeMessage(6, getAddress());
     }
-    if (((bitField0_ & 0x00000040) == 0x00000040)) {
+    if (coordinates_ != null) {
       output.writeMessage(7, getCoordinates());
     }
-    for (int i = 0; i < amenities_.size(); i++) {
-      output.writeEnum(8, amenities_.get(i));
+    if (getAmenitiesList().size() > 0) {
+      output.writeUInt32NoTag(66);
+      output.writeUInt32NoTag(amenitiesMemoizedSerializedSize);
     }
-    unknownFields.writeTo(output);
+    for (int i = 0; i < amenities_.size(); i++) {
+      output.writeEnumNoTag(amenities_.get(i));
+    }
   }
 
   public int getSerializedSize() {
@@ -439,28 +407,28 @@ public  final class HotelDetails extends
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (hotelId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, hotelId_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (!getHotelNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, hotelName_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (!getHotelDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, hotelDescription_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (!getChainCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, chainCode_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (starRating_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, starRating_);
     }
-    if (((bitField0_ & 0x00000020) == 0x00000020)) {
+    if (address_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getAddress());
     }
-    if (((bitField0_ & 0x00000040) == 0x00000040)) {
+    if (coordinates_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getCoordinates());
     }
@@ -471,9 +439,11 @@ public  final class HotelDetails extends
           .computeEnumSizeNoTag(amenities_.get(i));
       }
       size += dataSize;
-      size += 1 * amenities_.size();
+      if (!getAmenitiesList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }amenitiesMemoizedSerializedSize = dataSize;
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -490,31 +460,16 @@ public  final class HotelDetails extends
     com.hotel.proto.HotelDetails other = (com.hotel.proto.HotelDetails) obj;
 
     boolean result = true;
-    result = result && (hasHotelId() == other.hasHotelId());
-    if (hasHotelId()) {
-      result = result && (getHotelId()
-          == other.getHotelId());
-    }
-    result = result && (hasHotelName() == other.hasHotelName());
-    if (hasHotelName()) {
-      result = result && getHotelName()
-          .equals(other.getHotelName());
-    }
-    result = result && (hasHotelDescription() == other.hasHotelDescription());
-    if (hasHotelDescription()) {
-      result = result && getHotelDescription()
-          .equals(other.getHotelDescription());
-    }
-    result = result && (hasChainCode() == other.hasChainCode());
-    if (hasChainCode()) {
-      result = result && getChainCode()
-          .equals(other.getChainCode());
-    }
-    result = result && (hasStarRating() == other.hasStarRating());
-    if (hasStarRating()) {
-      result = result && (getStarRating()
-          == other.getStarRating());
-    }
+    result = result && (getHotelId()
+        == other.getHotelId());
+    result = result && getHotelName()
+        .equals(other.getHotelName());
+    result = result && getHotelDescription()
+        .equals(other.getHotelDescription());
+    result = result && getChainCode()
+        .equals(other.getChainCode());
+    result = result && (getStarRating()
+        == other.getStarRating());
     result = result && (hasAddress() == other.hasAddress());
     if (hasAddress()) {
       result = result && getAddress()
@@ -526,7 +481,6 @@ public  final class HotelDetails extends
           .equals(other.getCoordinates());
     }
     result = result && amenities_.equals(other.amenities_);
-    result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
@@ -536,29 +490,19 @@ public  final class HotelDetails extends
       return memoizedHashCode;
     }
     int hash = 41;
-    hash = (19 * hash) + getDescriptorForType().hashCode();
-    if (hasHotelId()) {
-      hash = (37 * hash) + HOTELID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getHotelId());
-    }
-    if (hasHotelName()) {
-      hash = (37 * hash) + HOTELNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getHotelName().hashCode();
-    }
-    if (hasHotelDescription()) {
-      hash = (37 * hash) + HOTELDESCRIPTION_FIELD_NUMBER;
-      hash = (53 * hash) + getHotelDescription().hashCode();
-    }
-    if (hasChainCode()) {
-      hash = (37 * hash) + CHAINCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getChainCode().hashCode();
-    }
-    if (hasStarRating()) {
-      hash = (37 * hash) + STARRATING_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getStarRating());
-    }
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + HOTELID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getHotelId());
+    hash = (37 * hash) + HOTELNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getHotelName().hashCode();
+    hash = (37 * hash) + HOTELDESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getHotelDescription().hashCode();
+    hash = (37 * hash) + CHAINCODE_FIELD_NUMBER;
+    hash = (53 * hash) + getChainCode().hashCode();
+    hash = (37 * hash) + STARRATING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getStarRating());
     if (hasAddress()) {
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
@@ -685,34 +629,32 @@ public  final class HotelDetails extends
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getAddressFieldBuilder();
-        getCoordinatesFieldBuilder();
       }
     }
     public Builder clear() {
       super.clear();
       hotelId_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       hotelName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       hotelDescription_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       chainCode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       starRating_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       if (addressBuilder_ == null) {
         address_ = null;
       } else {
-        addressBuilder_.clear();
+        address_ = null;
+        addressBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
       if (coordinatesBuilder_ == null) {
         coordinates_ = null;
       } else {
-        coordinatesBuilder_.clear();
+        coordinates_ = null;
+        coordinatesBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
       amenities_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
       return this;
@@ -739,36 +681,15 @@ public  final class HotelDetails extends
       com.hotel.proto.HotelDetails result = new com.hotel.proto.HotelDetails(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-        to_bitField0_ |= 0x00000001;
-      }
       result.hotelId_ = hotelId_;
-      if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-        to_bitField0_ |= 0x00000002;
-      }
       result.hotelName_ = hotelName_;
-      if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-        to_bitField0_ |= 0x00000004;
-      }
       result.hotelDescription_ = hotelDescription_;
-      if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-        to_bitField0_ |= 0x00000008;
-      }
       result.chainCode_ = chainCode_;
-      if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-        to_bitField0_ |= 0x00000010;
-      }
       result.starRating_ = starRating_;
-      if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-        to_bitField0_ |= 0x00000020;
-      }
       if (addressBuilder_ == null) {
         result.address_ = address_;
       } else {
         result.address_ = addressBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-        to_bitField0_ |= 0x00000040;
       }
       if (coordinatesBuilder_ == null) {
         result.coordinates_ = coordinates_;
@@ -822,25 +743,22 @@ public  final class HotelDetails extends
 
     public Builder mergeFrom(com.hotel.proto.HotelDetails other) {
       if (other == com.hotel.proto.HotelDetails.getDefaultInstance()) return this;
-      if (other.hasHotelId()) {
+      if (other.getHotelId() != 0L) {
         setHotelId(other.getHotelId());
       }
-      if (other.hasHotelName()) {
-        bitField0_ |= 0x00000002;
+      if (!other.getHotelName().isEmpty()) {
         hotelName_ = other.hotelName_;
         onChanged();
       }
-      if (other.hasHotelDescription()) {
-        bitField0_ |= 0x00000004;
+      if (!other.getHotelDescription().isEmpty()) {
         hotelDescription_ = other.hotelDescription_;
         onChanged();
       }
-      if (other.hasChainCode()) {
-        bitField0_ |= 0x00000008;
+      if (!other.getChainCode().isEmpty()) {
         chainCode_ = other.chainCode_;
         onChanged();
       }
-      if (other.hasStarRating()) {
+      if (other.getStarRating() != 0L) {
         setStarRating(other.getStarRating());
       }
       if (other.hasAddress()) {
@@ -859,7 +777,6 @@ public  final class HotelDetails extends
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -889,31 +806,25 @@ public  final class HotelDetails extends
 
     private long hotelId_ ;
     /**
-     * <code>optional int64 hotelId = 1;</code>
-     */
-    public boolean hasHotelId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>optional int64 hotelId = 1;</code>
+     * <code>int64 hotelId = 1;</code>
      */
     public long getHotelId() {
       return hotelId_;
     }
     /**
-     * <code>optional int64 hotelId = 1;</code>
+     * <code>int64 hotelId = 1;</code>
      */
     public Builder setHotelId(long value) {
-      bitField0_ |= 0x00000001;
+      
       hotelId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int64 hotelId = 1;</code>
+     * <code>int64 hotelId = 1;</code>
      */
     public Builder clearHotelId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       hotelId_ = 0L;
       onChanged();
       return this;
@@ -921,13 +832,7 @@ public  final class HotelDetails extends
 
     private java.lang.Object hotelName_ = "";
     /**
-     * <code>optional string hotelName = 2;</code>
-     */
-    public boolean hasHotelName() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string hotelName = 2;</code>
+     * <code>string hotelName = 2;</code>
      */
     public java.lang.String getHotelName() {
       java.lang.Object ref = hotelName_;
@@ -935,16 +840,14 @@ public  final class HotelDetails extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          hotelName_ = s;
-        }
+        hotelName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string hotelName = 2;</code>
+     * <code>string hotelName = 2;</code>
      */
     public com.google.protobuf.ByteString
         getHotelNameBytes() {
@@ -960,36 +863,37 @@ public  final class HotelDetails extends
       }
     }
     /**
-     * <code>optional string hotelName = 2;</code>
+     * <code>string hotelName = 2;</code>
      */
     public Builder setHotelName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  
       hotelName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string hotelName = 2;</code>
+     * <code>string hotelName = 2;</code>
      */
     public Builder clearHotelName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       hotelName_ = getDefaultInstance().getHotelName();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string hotelName = 2;</code>
+     * <code>string hotelName = 2;</code>
      */
     public Builder setHotelNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  checkByteStringIsUtf8(value);
+      
       hotelName_ = value;
       onChanged();
       return this;
@@ -997,13 +901,7 @@ public  final class HotelDetails extends
 
     private java.lang.Object hotelDescription_ = "";
     /**
-     * <code>optional string hotelDescription = 3;</code>
-     */
-    public boolean hasHotelDescription() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional string hotelDescription = 3;</code>
+     * <code>string hotelDescription = 3;</code>
      */
     public java.lang.String getHotelDescription() {
       java.lang.Object ref = hotelDescription_;
@@ -1011,16 +909,14 @@ public  final class HotelDetails extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          hotelDescription_ = s;
-        }
+        hotelDescription_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string hotelDescription = 3;</code>
+     * <code>string hotelDescription = 3;</code>
      */
     public com.google.protobuf.ByteString
         getHotelDescriptionBytes() {
@@ -1036,36 +932,37 @@ public  final class HotelDetails extends
       }
     }
     /**
-     * <code>optional string hotelDescription = 3;</code>
+     * <code>string hotelDescription = 3;</code>
      */
     public Builder setHotelDescription(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  
       hotelDescription_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string hotelDescription = 3;</code>
+     * <code>string hotelDescription = 3;</code>
      */
     public Builder clearHotelDescription() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       hotelDescription_ = getDefaultInstance().getHotelDescription();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string hotelDescription = 3;</code>
+     * <code>string hotelDescription = 3;</code>
      */
     public Builder setHotelDescriptionBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  checkByteStringIsUtf8(value);
+      
       hotelDescription_ = value;
       onChanged();
       return this;
@@ -1073,13 +970,7 @@ public  final class HotelDetails extends
 
     private java.lang.Object chainCode_ = "";
     /**
-     * <code>optional string chainCode = 4;</code>
-     */
-    public boolean hasChainCode() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional string chainCode = 4;</code>
+     * <code>string chainCode = 4;</code>
      */
     public java.lang.String getChainCode() {
       java.lang.Object ref = chainCode_;
@@ -1087,16 +978,14 @@ public  final class HotelDetails extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          chainCode_ = s;
-        }
+        chainCode_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string chainCode = 4;</code>
+     * <code>string chainCode = 4;</code>
      */
     public com.google.protobuf.ByteString
         getChainCodeBytes() {
@@ -1112,36 +1001,37 @@ public  final class HotelDetails extends
       }
     }
     /**
-     * <code>optional string chainCode = 4;</code>
+     * <code>string chainCode = 4;</code>
      */
     public Builder setChainCode(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  
       chainCode_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string chainCode = 4;</code>
+     * <code>string chainCode = 4;</code>
      */
     public Builder clearChainCode() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       chainCode_ = getDefaultInstance().getChainCode();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string chainCode = 4;</code>
+     * <code>string chainCode = 4;</code>
      */
     public Builder setChainCodeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  checkByteStringIsUtf8(value);
+      
       chainCode_ = value;
       onChanged();
       return this;
@@ -1149,31 +1039,25 @@ public  final class HotelDetails extends
 
     private long starRating_ ;
     /**
-     * <code>optional int64 starRating = 5;</code>
-     */
-    public boolean hasStarRating() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional int64 starRating = 5;</code>
+     * <code>int64 starRating = 5;</code>
      */
     public long getStarRating() {
       return starRating_;
     }
     /**
-     * <code>optional int64 starRating = 5;</code>
+     * <code>int64 starRating = 5;</code>
      */
     public Builder setStarRating(long value) {
-      bitField0_ |= 0x00000010;
+      
       starRating_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional int64 starRating = 5;</code>
+     * <code>int64 starRating = 5;</code>
      */
     public Builder clearStarRating() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       starRating_ = 0L;
       onChanged();
       return this;
@@ -1183,13 +1067,13 @@ public  final class HotelDetails extends
     private com.google.protobuf.SingleFieldBuilderV3<
         com.hotel.proto.Address, com.hotel.proto.Address.Builder, com.hotel.proto.AddressOrBuilder> addressBuilder_;
     /**
-     * <code>optional .com.hotel.proto.Address address = 6;</code>
+     * <code>.com.hotel.proto.Address address = 6;</code>
      */
     public boolean hasAddress() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return addressBuilder_ != null || address_ != null;
     }
     /**
-     * <code>optional .com.hotel.proto.Address address = 6;</code>
+     * <code>.com.hotel.proto.Address address = 6;</code>
      */
     public com.hotel.proto.Address getAddress() {
       if (addressBuilder_ == null) {
@@ -1199,7 +1083,7 @@ public  final class HotelDetails extends
       }
     }
     /**
-     * <code>optional .com.hotel.proto.Address address = 6;</code>
+     * <code>.com.hotel.proto.Address address = 6;</code>
      */
     public Builder setAddress(com.hotel.proto.Address value) {
       if (addressBuilder_ == null) {
@@ -1211,11 +1095,11 @@ public  final class HotelDetails extends
       } else {
         addressBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+
       return this;
     }
     /**
-     * <code>optional .com.hotel.proto.Address address = 6;</code>
+     * <code>.com.hotel.proto.Address address = 6;</code>
      */
     public Builder setAddress(
         com.hotel.proto.Address.Builder builderForValue) {
@@ -1225,17 +1109,15 @@ public  final class HotelDetails extends
       } else {
         addressBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+
       return this;
     }
     /**
-     * <code>optional .com.hotel.proto.Address address = 6;</code>
+     * <code>.com.hotel.proto.Address address = 6;</code>
      */
     public Builder mergeAddress(com.hotel.proto.Address value) {
       if (addressBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020) &&
-            address_ != null &&
-            address_ != com.hotel.proto.Address.getDefaultInstance()) {
+        if (address_ != null) {
           address_ =
             com.hotel.proto.Address.newBuilder(address_).mergeFrom(value).buildPartial();
         } else {
@@ -1245,32 +1127,33 @@ public  final class HotelDetails extends
       } else {
         addressBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+
       return this;
     }
     /**
-     * <code>optional .com.hotel.proto.Address address = 6;</code>
+     * <code>.com.hotel.proto.Address address = 6;</code>
      */
     public Builder clearAddress() {
       if (addressBuilder_ == null) {
         address_ = null;
         onChanged();
       } else {
-        addressBuilder_.clear();
+        address_ = null;
+        addressBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+
       return this;
     }
     /**
-     * <code>optional .com.hotel.proto.Address address = 6;</code>
+     * <code>.com.hotel.proto.Address address = 6;</code>
      */
     public com.hotel.proto.Address.Builder getAddressBuilder() {
-      bitField0_ |= 0x00000020;
+      
       onChanged();
       return getAddressFieldBuilder().getBuilder();
     }
     /**
-     * <code>optional .com.hotel.proto.Address address = 6;</code>
+     * <code>.com.hotel.proto.Address address = 6;</code>
      */
     public com.hotel.proto.AddressOrBuilder getAddressOrBuilder() {
       if (addressBuilder_ != null) {
@@ -1281,7 +1164,7 @@ public  final class HotelDetails extends
       }
     }
     /**
-     * <code>optional .com.hotel.proto.Address address = 6;</code>
+     * <code>.com.hotel.proto.Address address = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.hotel.proto.Address, com.hotel.proto.Address.Builder, com.hotel.proto.AddressOrBuilder> 
@@ -1301,13 +1184,13 @@ public  final class HotelDetails extends
     private com.google.protobuf.SingleFieldBuilderV3<
         com.hotel.proto.Coordinates, com.hotel.proto.Coordinates.Builder, com.hotel.proto.CoordinatesOrBuilder> coordinatesBuilder_;
     /**
-     * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+     * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
      */
     public boolean hasCoordinates() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return coordinatesBuilder_ != null || coordinates_ != null;
     }
     /**
-     * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+     * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
      */
     public com.hotel.proto.Coordinates getCoordinates() {
       if (coordinatesBuilder_ == null) {
@@ -1317,7 +1200,7 @@ public  final class HotelDetails extends
       }
     }
     /**
-     * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+     * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
      */
     public Builder setCoordinates(com.hotel.proto.Coordinates value) {
       if (coordinatesBuilder_ == null) {
@@ -1329,11 +1212,11 @@ public  final class HotelDetails extends
       } else {
         coordinatesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+
       return this;
     }
     /**
-     * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+     * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
      */
     public Builder setCoordinates(
         com.hotel.proto.Coordinates.Builder builderForValue) {
@@ -1343,17 +1226,15 @@ public  final class HotelDetails extends
       } else {
         coordinatesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+
       return this;
     }
     /**
-     * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+     * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
      */
     public Builder mergeCoordinates(com.hotel.proto.Coordinates value) {
       if (coordinatesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040) &&
-            coordinates_ != null &&
-            coordinates_ != com.hotel.proto.Coordinates.getDefaultInstance()) {
+        if (coordinates_ != null) {
           coordinates_ =
             com.hotel.proto.Coordinates.newBuilder(coordinates_).mergeFrom(value).buildPartial();
         } else {
@@ -1363,32 +1244,33 @@ public  final class HotelDetails extends
       } else {
         coordinatesBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+
       return this;
     }
     /**
-     * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+     * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
      */
     public Builder clearCoordinates() {
       if (coordinatesBuilder_ == null) {
         coordinates_ = null;
         onChanged();
       } else {
-        coordinatesBuilder_.clear();
+        coordinates_ = null;
+        coordinatesBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+
       return this;
     }
     /**
-     * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+     * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
      */
     public com.hotel.proto.Coordinates.Builder getCoordinatesBuilder() {
-      bitField0_ |= 0x00000040;
+      
       onChanged();
       return getCoordinatesFieldBuilder().getBuilder();
     }
     /**
-     * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+     * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
      */
     public com.hotel.proto.CoordinatesOrBuilder getCoordinatesOrBuilder() {
       if (coordinatesBuilder_ != null) {
@@ -1399,7 +1281,7 @@ public  final class HotelDetails extends
       }
     }
     /**
-     * <code>optional .com.hotel.proto.Coordinates coordinates = 7;</code>
+     * <code>.com.hotel.proto.Coordinates coordinates = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.hotel.proto.Coordinates, com.hotel.proto.Coordinates.Builder, com.hotel.proto.CoordinatesOrBuilder> 
@@ -1488,14 +1370,58 @@ public  final class HotelDetails extends
       onChanged();
       return this;
     }
+    /**
+     * <code>repeated .com.hotel.proto.Amenity amenities = 8;</code>
+     */
+    public java.util.List<java.lang.Integer>
+    getAmenitiesValueList() {
+      return java.util.Collections.unmodifiableList(amenities_);
+    }
+    /**
+     * <code>repeated .com.hotel.proto.Amenity amenities = 8;</code>
+     */
+    public int getAmenitiesValue(int index) {
+      return amenities_.get(index);
+    }
+    /**
+     * <code>repeated .com.hotel.proto.Amenity amenities = 8;</code>
+     */
+    public Builder setAmenitiesValue(
+        int index, int value) {
+      ensureAmenitiesIsMutable();
+      amenities_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .com.hotel.proto.Amenity amenities = 8;</code>
+     */
+    public Builder addAmenitiesValue(int value) {
+      ensureAmenitiesIsMutable();
+      amenities_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .com.hotel.proto.Amenity amenities = 8;</code>
+     */
+    public Builder addAllAmenitiesValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureAmenitiesIsMutable();
+      for (int value : values) {
+        amenities_.add(value);
+      }
+      onChanged();
+      return this;
+    }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -1512,7 +1438,7 @@ public  final class HotelDetails extends
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<HotelDetails>
+  private static final com.google.protobuf.Parser<HotelDetails>
       PARSER = new com.google.protobuf.AbstractParser<HotelDetails>() {
     public HotelDetails parsePartialFrom(
         com.google.protobuf.CodedInputStream input,

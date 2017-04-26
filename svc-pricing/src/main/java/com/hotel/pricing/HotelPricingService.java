@@ -4,6 +4,9 @@ import java.util.Random;
 
 import org.springframework.stereotype.Service;
 
+import com.hotel.rate.proto.Availability;
+import com.hotel.rate.proto.HotelPricePreview;
+
 @Service
 public class HotelPricingService {
     private Random randomGenerator;
@@ -13,21 +16,19 @@ public class HotelPricingService {
     public HotelPricingService() {
         randomGenerator = new Random();
     }
-    
-//UNCOMMENT the code below enable Hystrix fallback capability
-//    @HystrixCommand()
-    public Double getHotelPricing(String hotelId) throws Exception {
+
+    public HotelPricePreview getHotelPricing(int hotelId) throws Exception {
         Thread.sleep(delay);
         Double price = 100 + (1000 - 100) * randomGenerator.nextDouble();
         if (enableFailures && price > 900) {
             throw new Exception("Fake Exception");
         }
-        return price;
+        return HotelPricePreview.newBuilder()
+                                .setHotelId(hotelId)
+                                .setAvailabilityStatus(Availability.AVAILABLE)
+                                .setDisplayPrice(price.doubleValue())
+                                .build();
     }
-    
-//    public Object defaultPricing(String hotelId) {
-//        return null;
-//    }
     
     public void setDelay(long delay) {
         this.delay = delay;

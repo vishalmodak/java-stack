@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
+import com.hotel.shop.proto.HotelShoppingInfo;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,7 +32,7 @@ public class HotelAggregateController {
 //        return json;
 //    }
 
-    @RequestMapping(value="/info/{hotelId}", method = RequestMethod.GET)
+    @RequestMapping(value="/info/{hotelId}", method = RequestMethod.GET, produces={"application/json"})
     @ApiOperation(value = "getHotelDetails", notes = "Returns Hotel Name, Price, Reviews & Rating")
     public String getHotelInfoAsync(@PathVariable String hotelId) throws Exception {
         Gson gson = new Gson();
@@ -39,12 +40,10 @@ public class HotelAggregateController {
         return json;
     }
 
-    @RequestMapping(value="/info/sync/{hotelId}", method = RequestMethod.GET)
+    @RequestMapping(value="/info/sync/{hotelId}", method = RequestMethod.GET, produces={"application/json","application/x-protobuf"})
     @ApiOperation(value = "getHotelDetails", notes = "Returns Hotel Name, Price, Reviews & Rating")
-    public String getHotelInfoSync(@PathVariable String hotelId) throws Exception {
-        Gson gson = new Gson();
-        String json = gson.toJson(syncAggregator.getHotelData(hotelId));
-        return json;
+    public HotelShoppingInfo getHotelInfoSync(@PathVariable String hotelId) throws Exception {
+        return syncAggregator.getHotelData(hotelId);
     }
     
 //    @RequestMapping(value="/infoY/{hotelId}", method = RequestMethod.GET)

@@ -2,12 +2,11 @@ package com.hotel.aggregator.callable;
 
 import java.util.concurrent.Callable;
 
-import com.hotel.aggregator.AsyncResponse;
 import com.hotel.aggregator.clients.HotelDetailsClient;
 import com.hotel.proto.HotelDetails;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-public class DetailsCallable implements Callable<AsyncResponse>{
+public class DetailsCallable implements Callable<HotelDetails>{
     private String hotelId;
 
     private HotelDetailsClient hotelDetailsClient;
@@ -18,14 +17,14 @@ public class DetailsCallable implements Callable<AsyncResponse>{
     }
     
     @Override
-    public AsyncResponse call() throws Exception {
-        return new AsyncResponse("details", getHotelDetails(this.hotelId));
+    public HotelDetails call() throws Exception {
+        return getHotelDetails(this.hotelId);
     }
     @HystrixCommand(fallbackMethod = "defaultDetails")
-    public String getHotelDetails(final String hotelId) {
-        return hotelDetailsClient.getHotelDetails(hotelId).toString();
+    public HotelDetails getHotelDetails(final String hotelId) {
+        return hotelDetailsClient.getHotelDetails(hotelId);
     }
-    public String defaultDetails() {
-        return HotelDetails.getDefaultInstance().toString();
+    public HotelDetails defaultDetails() {
+        return HotelDetails.getDefaultInstance();
     }
 }

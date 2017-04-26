@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "Hotel";
+
+import "hotel.proto";
+import "hotel_rate.proto";
+import "reviews.proto";
+
+package com.hotel.shop.proto;
+
+message HotelShoppingInfo {
+    hotel.proto.HotelDetails hotelDetails = 1;
+    hotel.rate.proto.HotelPricePreview pricePreview = 2;
+    hotel.reviews.proto.HotelReviewInfo reviewInfo = 3;
+}

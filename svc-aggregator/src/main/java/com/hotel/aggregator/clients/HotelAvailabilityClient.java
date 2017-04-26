@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.hotel.aggregator.config.CacheConfig;
+import com.hotel.rate.proto.HotelPricePreview;
 
 @FeignClient("svc-availability")
 public interface HotelAvailabilityClient {
 
-    @RequestMapping(value="/hotel/avail/{hotelId}", method=RequestMethod.GET)
+    @RequestMapping(value="/hotel/avail/{hotelId}", method=RequestMethod.GET, consumes={"application/x-protobuf"})
     @Cacheable(CacheConfig.CACHE_AVAILABILITY)
-    public String getHotelAvailability(@PathVariable("hotelId") String hotelId);
+    public HotelPricePreview getHotelAvailability(@PathVariable("hotelId") String hotelId);
 }

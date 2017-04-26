@@ -8,20 +8,12 @@ public interface CoordinatesOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional double latitude = 1;</code>
-   */
-  boolean hasLatitude();
-  /**
-   * <code>optional double latitude = 1;</code>
+   * <code>double latitude = 1;</code>
    */
   double getLatitude();
 
   /**
-   * <code>optional double longitude = 2;</code>
-   */
-  boolean hasLongitude();
-  /**
-   * <code>optional double longitude = 2;</code>
+   * <code>double longitude = 2;</code>
    */
   double getLongitude();
 }

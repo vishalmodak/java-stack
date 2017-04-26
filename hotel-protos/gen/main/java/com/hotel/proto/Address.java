@@ -27,7 +27,7 @@ public  final class Address extends
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private Address(
       com.google.protobuf.CodedInputStream input,
@@ -35,8 +35,6 @@ public  final class Address extends
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -46,52 +44,51 @@ public  final class Address extends
             done = true;
             break;
           default: {
-            if (!parseUnknownField(input, unknownFields,
-                                   extensionRegistry, tag)) {
+            if (!input.skipField(tag)) {
               done = true;
             }
             break;
           }
           case 10: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000001;
-            streetAddress_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            streetAddress_ = s;
             break;
           }
           case 18: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000002;
-            city_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            city_ = s;
             break;
           }
           case 26: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000004;
-            state_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            state_ = s;
             break;
           }
           case 34: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000008;
-            stateCode_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            stateCode_ = s;
             break;
           }
           case 42: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000010;
-            country_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            country_ = s;
             break;
           }
           case 50: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000020;
-            countryCode_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            countryCode_ = s;
             break;
           }
           case 58: {
-            com.google.protobuf.ByteString bs = input.readBytes();
-            bitField0_ |= 0x00000040;
-            zipCode_ = bs;
+            java.lang.String s = input.readStringRequireUtf8();
+
+            zipCode_ = s;
             break;
           }
         }
@@ -102,7 +99,6 @@ public  final class Address extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -118,17 +114,10 @@ public  final class Address extends
             com.hotel.proto.Address.class, com.hotel.proto.Address.Builder.class);
   }
 
-  private int bitField0_;
   public static final int STREETADDRESS_FIELD_NUMBER = 1;
   private volatile java.lang.Object streetAddress_;
   /**
-   * <code>optional string streetAddress = 1;</code>
-   */
-  public boolean hasStreetAddress() {
-    return ((bitField0_ & 0x00000001) == 0x00000001);
-  }
-  /**
-   * <code>optional string streetAddress = 1;</code>
+   * <code>string streetAddress = 1;</code>
    */
   public java.lang.String getStreetAddress() {
     java.lang.Object ref = streetAddress_;
@@ -138,14 +127,12 @@ public  final class Address extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        streetAddress_ = s;
-      }
+      streetAddress_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string streetAddress = 1;</code>
+   * <code>string streetAddress = 1;</code>
    */
   public com.google.protobuf.ByteString
       getStreetAddressBytes() {
@@ -164,13 +151,7 @@ public  final class Address extends
   public static final int CITY_FIELD_NUMBER = 2;
   private volatile java.lang.Object city_;
   /**
-   * <code>optional string city = 2;</code>
-   */
-  public boolean hasCity() {
-    return ((bitField0_ & 0x00000002) == 0x00000002);
-  }
-  /**
-   * <code>optional string city = 2;</code>
+   * <code>string city = 2;</code>
    */
   public java.lang.String getCity() {
     java.lang.Object ref = city_;
@@ -180,14 +161,12 @@ public  final class Address extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        city_ = s;
-      }
+      city_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string city = 2;</code>
+   * <code>string city = 2;</code>
    */
   public com.google.protobuf.ByteString
       getCityBytes() {
@@ -206,13 +185,7 @@ public  final class Address extends
   public static final int STATE_FIELD_NUMBER = 3;
   private volatile java.lang.Object state_;
   /**
-   * <code>optional string state = 3;</code>
-   */
-  public boolean hasState() {
-    return ((bitField0_ & 0x00000004) == 0x00000004);
-  }
-  /**
-   * <code>optional string state = 3;</code>
+   * <code>string state = 3;</code>
    */
   public java.lang.String getState() {
     java.lang.Object ref = state_;
@@ -222,14 +195,12 @@ public  final class Address extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        state_ = s;
-      }
+      state_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string state = 3;</code>
+   * <code>string state = 3;</code>
    */
   public com.google.protobuf.ByteString
       getStateBytes() {
@@ -248,13 +219,7 @@ public  final class Address extends
   public static final int STATECODE_FIELD_NUMBER = 4;
   private volatile java.lang.Object stateCode_;
   /**
-   * <code>optional string stateCode = 4;</code>
-   */
-  public boolean hasStateCode() {
-    return ((bitField0_ & 0x00000008) == 0x00000008);
-  }
-  /**
-   * <code>optional string stateCode = 4;</code>
+   * <code>string stateCode = 4;</code>
    */
   public java.lang.String getStateCode() {
     java.lang.Object ref = stateCode_;
@@ -264,14 +229,12 @@ public  final class Address extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        stateCode_ = s;
-      }
+      stateCode_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string stateCode = 4;</code>
+   * <code>string stateCode = 4;</code>
    */
   public com.google.protobuf.ByteString
       getStateCodeBytes() {
@@ -290,13 +253,7 @@ public  final class Address extends
   public static final int COUNTRY_FIELD_NUMBER = 5;
   private volatile java.lang.Object country_;
   /**
-   * <code>optional string country = 5;</code>
-   */
-  public boolean hasCountry() {
-    return ((bitField0_ & 0x00000010) == 0x00000010);
-  }
-  /**
-   * <code>optional string country = 5;</code>
+   * <code>string country = 5;</code>
    */
   public java.lang.String getCountry() {
     java.lang.Object ref = country_;
@@ -306,14 +263,12 @@ public  final class Address extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        country_ = s;
-      }
+      country_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string country = 5;</code>
+   * <code>string country = 5;</code>
    */
   public com.google.protobuf.ByteString
       getCountryBytes() {
@@ -332,13 +287,7 @@ public  final class Address extends
   public static final int COUNTRYCODE_FIELD_NUMBER = 6;
   private volatile java.lang.Object countryCode_;
   /**
-   * <code>optional string countryCode = 6;</code>
-   */
-  public boolean hasCountryCode() {
-    return ((bitField0_ & 0x00000020) == 0x00000020);
-  }
-  /**
-   * <code>optional string countryCode = 6;</code>
+   * <code>string countryCode = 6;</code>
    */
   public java.lang.String getCountryCode() {
     java.lang.Object ref = countryCode_;
@@ -348,14 +297,12 @@ public  final class Address extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        countryCode_ = s;
-      }
+      countryCode_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string countryCode = 6;</code>
+   * <code>string countryCode = 6;</code>
    */
   public com.google.protobuf.ByteString
       getCountryCodeBytes() {
@@ -374,13 +321,7 @@ public  final class Address extends
   public static final int ZIPCODE_FIELD_NUMBER = 7;
   private volatile java.lang.Object zipCode_;
   /**
-   * <code>optional string zipCode = 7;</code>
-   */
-  public boolean hasZipCode() {
-    return ((bitField0_ & 0x00000040) == 0x00000040);
-  }
-  /**
-   * <code>optional string zipCode = 7;</code>
+   * <code>string zipCode = 7;</code>
    */
   public java.lang.String getZipCode() {
     java.lang.Object ref = zipCode_;
@@ -390,14 +331,12 @@ public  final class Address extends
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      if (bs.isValidUtf8()) {
-        zipCode_ = s;
-      }
+      zipCode_ = s;
       return s;
     }
   }
   /**
-   * <code>optional string zipCode = 7;</code>
+   * <code>string zipCode = 7;</code>
    */
   public com.google.protobuf.ByteString
       getZipCodeBytes() {
@@ -425,28 +364,27 @@ public  final class Address extends
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (!getStreetAddressBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, streetAddress_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (!getCityBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, city_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (!getStateBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, state_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (!getStateCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, stateCode_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (!getCountryBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, country_);
     }
-    if (((bitField0_ & 0x00000020) == 0x00000020)) {
+    if (!getCountryCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, countryCode_);
     }
-    if (((bitField0_ & 0x00000040) == 0x00000040)) {
+    if (!getZipCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, zipCode_);
     }
-    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -454,28 +392,27 @@ public  final class Address extends
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) == 0x00000001)) {
+    if (!getStreetAddressBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, streetAddress_);
     }
-    if (((bitField0_ & 0x00000002) == 0x00000002)) {
+    if (!getCityBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, city_);
     }
-    if (((bitField0_ & 0x00000004) == 0x00000004)) {
+    if (!getStateBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, state_);
     }
-    if (((bitField0_ & 0x00000008) == 0x00000008)) {
+    if (!getStateCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, stateCode_);
     }
-    if (((bitField0_ & 0x00000010) == 0x00000010)) {
+    if (!getCountryBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, country_);
     }
-    if (((bitField0_ & 0x00000020) == 0x00000020)) {
+    if (!getCountryCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, countryCode_);
     }
-    if (((bitField0_ & 0x00000040) == 0x00000040)) {
+    if (!getZipCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, zipCode_);
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -492,42 +429,20 @@ public  final class Address extends
     com.hotel.proto.Address other = (com.hotel.proto.Address) obj;
 
     boolean result = true;
-    result = result && (hasStreetAddress() == other.hasStreetAddress());
-    if (hasStreetAddress()) {
-      result = result && getStreetAddress()
-          .equals(other.getStreetAddress());
-    }
-    result = result && (hasCity() == other.hasCity());
-    if (hasCity()) {
-      result = result && getCity()
-          .equals(other.getCity());
-    }
-    result = result && (hasState() == other.hasState());
-    if (hasState()) {
-      result = result && getState()
-          .equals(other.getState());
-    }
-    result = result && (hasStateCode() == other.hasStateCode());
-    if (hasStateCode()) {
-      result = result && getStateCode()
-          .equals(other.getStateCode());
-    }
-    result = result && (hasCountry() == other.hasCountry());
-    if (hasCountry()) {
-      result = result && getCountry()
-          .equals(other.getCountry());
-    }
-    result = result && (hasCountryCode() == other.hasCountryCode());
-    if (hasCountryCode()) {
-      result = result && getCountryCode()
-          .equals(other.getCountryCode());
-    }
-    result = result && (hasZipCode() == other.hasZipCode());
-    if (hasZipCode()) {
-      result = result && getZipCode()
-          .equals(other.getZipCode());
-    }
-    result = result && unknownFields.equals(other.unknownFields);
+    result = result && getStreetAddress()
+        .equals(other.getStreetAddress());
+    result = result && getCity()
+        .equals(other.getCity());
+    result = result && getState()
+        .equals(other.getState());
+    result = result && getStateCode()
+        .equals(other.getStateCode());
+    result = result && getCountry()
+        .equals(other.getCountry());
+    result = result && getCountryCode()
+        .equals(other.getCountryCode());
+    result = result && getZipCode()
+        .equals(other.getZipCode());
     return result;
   }
 
@@ -537,35 +452,21 @@ public  final class Address extends
       return memoizedHashCode;
     }
     int hash = 41;
-    hash = (19 * hash) + getDescriptorForType().hashCode();
-    if (hasStreetAddress()) {
-      hash = (37 * hash) + STREETADDRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getStreetAddress().hashCode();
-    }
-    if (hasCity()) {
-      hash = (37 * hash) + CITY_FIELD_NUMBER;
-      hash = (53 * hash) + getCity().hashCode();
-    }
-    if (hasState()) {
-      hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getState().hashCode();
-    }
-    if (hasStateCode()) {
-      hash = (37 * hash) + STATECODE_FIELD_NUMBER;
-      hash = (53 * hash) + getStateCode().hashCode();
-    }
-    if (hasCountry()) {
-      hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
-      hash = (53 * hash) + getCountry().hashCode();
-    }
-    if (hasCountryCode()) {
-      hash = (37 * hash) + COUNTRYCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getCountryCode().hashCode();
-    }
-    if (hasZipCode()) {
-      hash = (37 * hash) + ZIPCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getZipCode().hashCode();
-    }
+    hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + STREETADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getStreetAddress().hashCode();
+    hash = (37 * hash) + CITY_FIELD_NUMBER;
+    hash = (53 * hash) + getCity().hashCode();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + getState().hashCode();
+    hash = (37 * hash) + STATECODE_FIELD_NUMBER;
+    hash = (53 * hash) + getStateCode().hashCode();
+    hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
+    hash = (53 * hash) + getCountry().hashCode();
+    hash = (37 * hash) + COUNTRYCODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCountryCode().hashCode();
+    hash = (37 * hash) + ZIPCODE_FIELD_NUMBER;
+    hash = (53 * hash) + getZipCode().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -685,19 +586,19 @@ public  final class Address extends
     public Builder clear() {
       super.clear();
       streetAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
+
       city_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
+
       state_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
+
       stateCode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
+
       country_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
+
       countryCode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000020);
+
       zipCode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000040);
+
       return this;
     }
 
@@ -720,37 +621,13 @@ public  final class Address extends
 
     public com.hotel.proto.Address buildPartial() {
       com.hotel.proto.Address result = new com.hotel.proto.Address(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-        to_bitField0_ |= 0x00000001;
-      }
       result.streetAddress_ = streetAddress_;
-      if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-        to_bitField0_ |= 0x00000002;
-      }
       result.city_ = city_;
-      if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-        to_bitField0_ |= 0x00000004;
-      }
       result.state_ = state_;
-      if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-        to_bitField0_ |= 0x00000008;
-      }
       result.stateCode_ = stateCode_;
-      if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-        to_bitField0_ |= 0x00000010;
-      }
       result.country_ = country_;
-      if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-        to_bitField0_ |= 0x00000020;
-      }
       result.countryCode_ = countryCode_;
-      if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-        to_bitField0_ |= 0x00000040;
-      }
       result.zipCode_ = zipCode_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -792,42 +669,34 @@ public  final class Address extends
 
     public Builder mergeFrom(com.hotel.proto.Address other) {
       if (other == com.hotel.proto.Address.getDefaultInstance()) return this;
-      if (other.hasStreetAddress()) {
-        bitField0_ |= 0x00000001;
+      if (!other.getStreetAddress().isEmpty()) {
         streetAddress_ = other.streetAddress_;
         onChanged();
       }
-      if (other.hasCity()) {
-        bitField0_ |= 0x00000002;
+      if (!other.getCity().isEmpty()) {
         city_ = other.city_;
         onChanged();
       }
-      if (other.hasState()) {
-        bitField0_ |= 0x00000004;
+      if (!other.getState().isEmpty()) {
         state_ = other.state_;
         onChanged();
       }
-      if (other.hasStateCode()) {
-        bitField0_ |= 0x00000008;
+      if (!other.getStateCode().isEmpty()) {
         stateCode_ = other.stateCode_;
         onChanged();
       }
-      if (other.hasCountry()) {
-        bitField0_ |= 0x00000010;
+      if (!other.getCountry().isEmpty()) {
         country_ = other.country_;
         onChanged();
       }
-      if (other.hasCountryCode()) {
-        bitField0_ |= 0x00000020;
+      if (!other.getCountryCode().isEmpty()) {
         countryCode_ = other.countryCode_;
         onChanged();
       }
-      if (other.hasZipCode()) {
-        bitField0_ |= 0x00000040;
+      if (!other.getZipCode().isEmpty()) {
         zipCode_ = other.zipCode_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -853,17 +722,10 @@ public  final class Address extends
       }
       return this;
     }
-    private int bitField0_;
 
     private java.lang.Object streetAddress_ = "";
     /**
-     * <code>optional string streetAddress = 1;</code>
-     */
-    public boolean hasStreetAddress() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>optional string streetAddress = 1;</code>
+     * <code>string streetAddress = 1;</code>
      */
     public java.lang.String getStreetAddress() {
       java.lang.Object ref = streetAddress_;
@@ -871,16 +733,14 @@ public  final class Address extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          streetAddress_ = s;
-        }
+        streetAddress_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string streetAddress = 1;</code>
+     * <code>string streetAddress = 1;</code>
      */
     public com.google.protobuf.ByteString
         getStreetAddressBytes() {
@@ -896,36 +756,37 @@ public  final class Address extends
       }
     }
     /**
-     * <code>optional string streetAddress = 1;</code>
+     * <code>string streetAddress = 1;</code>
      */
     public Builder setStreetAddress(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  
       streetAddress_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string streetAddress = 1;</code>
+     * <code>string streetAddress = 1;</code>
      */
     public Builder clearStreetAddress() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      
       streetAddress_ = getDefaultInstance().getStreetAddress();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string streetAddress = 1;</code>
+     * <code>string streetAddress = 1;</code>
      */
     public Builder setStreetAddressBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  checkByteStringIsUtf8(value);
+      
       streetAddress_ = value;
       onChanged();
       return this;
@@ -933,13 +794,7 @@ public  final class Address extends
 
     private java.lang.Object city_ = "";
     /**
-     * <code>optional string city = 2;</code>
-     */
-    public boolean hasCity() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string city = 2;</code>
+     * <code>string city = 2;</code>
      */
     public java.lang.String getCity() {
       java.lang.Object ref = city_;
@@ -947,16 +802,14 @@ public  final class Address extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          city_ = s;
-        }
+        city_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string city = 2;</code>
+     * <code>string city = 2;</code>
      */
     public com.google.protobuf.ByteString
         getCityBytes() {
@@ -972,36 +825,37 @@ public  final class Address extends
       }
     }
     /**
-     * <code>optional string city = 2;</code>
+     * <code>string city = 2;</code>
      */
     public Builder setCity(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  
       city_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string city = 2;</code>
+     * <code>string city = 2;</code>
      */
     public Builder clearCity() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      
       city_ = getDefaultInstance().getCity();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string city = 2;</code>
+     * <code>string city = 2;</code>
      */
     public Builder setCityBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  checkByteStringIsUtf8(value);
+      
       city_ = value;
       onChanged();
       return this;
@@ -1009,13 +863,7 @@ public  final class Address extends
 
     private java.lang.Object state_ = "";
     /**
-     * <code>optional string state = 3;</code>
-     */
-    public boolean hasState() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional string state = 3;</code>
+     * <code>string state = 3;</code>
      */
     public java.lang.String getState() {
       java.lang.Object ref = state_;
@@ -1023,16 +871,14 @@ public  final class Address extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          state_ = s;
-        }
+        state_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string state = 3;</code>
+     * <code>string state = 3;</code>
      */
     public com.google.protobuf.ByteString
         getStateBytes() {
@@ -1048,36 +894,37 @@ public  final class Address extends
       }
     }
     /**
-     * <code>optional string state = 3;</code>
+     * <code>string state = 3;</code>
      */
     public Builder setState(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  
       state_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string state = 3;</code>
+     * <code>string state = 3;</code>
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      
       state_ = getDefaultInstance().getState();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string state = 3;</code>
+     * <code>string state = 3;</code>
      */
     public Builder setStateBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  checkByteStringIsUtf8(value);
+      
       state_ = value;
       onChanged();
       return this;
@@ -1085,13 +932,7 @@ public  final class Address extends
 
     private java.lang.Object stateCode_ = "";
     /**
-     * <code>optional string stateCode = 4;</code>
-     */
-    public boolean hasStateCode() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional string stateCode = 4;</code>
+     * <code>string stateCode = 4;</code>
      */
     public java.lang.String getStateCode() {
       java.lang.Object ref = stateCode_;
@@ -1099,16 +940,14 @@ public  final class Address extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          stateCode_ = s;
-        }
+        stateCode_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string stateCode = 4;</code>
+     * <code>string stateCode = 4;</code>
      */
     public com.google.protobuf.ByteString
         getStateCodeBytes() {
@@ -1124,36 +963,37 @@ public  final class Address extends
       }
     }
     /**
-     * <code>optional string stateCode = 4;</code>
+     * <code>string stateCode = 4;</code>
      */
     public Builder setStateCode(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  
       stateCode_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string stateCode = 4;</code>
+     * <code>string stateCode = 4;</code>
      */
     public Builder clearStateCode() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      
       stateCode_ = getDefaultInstance().getStateCode();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string stateCode = 4;</code>
+     * <code>string stateCode = 4;</code>
      */
     public Builder setStateCodeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  checkByteStringIsUtf8(value);
+      
       stateCode_ = value;
       onChanged();
       return this;
@@ -1161,13 +1001,7 @@ public  final class Address extends
 
     private java.lang.Object country_ = "";
     /**
-     * <code>optional string country = 5;</code>
-     */
-    public boolean hasCountry() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional string country = 5;</code>
+     * <code>string country = 5;</code>
      */
     public java.lang.String getCountry() {
       java.lang.Object ref = country_;
@@ -1175,16 +1009,14 @@ public  final class Address extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          country_ = s;
-        }
+        country_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string country = 5;</code>
+     * <code>string country = 5;</code>
      */
     public com.google.protobuf.ByteString
         getCountryBytes() {
@@ -1200,36 +1032,37 @@ public  final class Address extends
       }
     }
     /**
-     * <code>optional string country = 5;</code>
+     * <code>string country = 5;</code>
      */
     public Builder setCountry(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  
       country_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string country = 5;</code>
+     * <code>string country = 5;</code>
      */
     public Builder clearCountry() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      
       country_ = getDefaultInstance().getCountry();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string country = 5;</code>
+     * <code>string country = 5;</code>
      */
     public Builder setCountryBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  checkByteStringIsUtf8(value);
+      
       country_ = value;
       onChanged();
       return this;
@@ -1237,13 +1070,7 @@ public  final class Address extends
 
     private java.lang.Object countryCode_ = "";
     /**
-     * <code>optional string countryCode = 6;</code>
-     */
-    public boolean hasCountryCode() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional string countryCode = 6;</code>
+     * <code>string countryCode = 6;</code>
      */
     public java.lang.String getCountryCode() {
       java.lang.Object ref = countryCode_;
@@ -1251,16 +1078,14 @@ public  final class Address extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          countryCode_ = s;
-        }
+        countryCode_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string countryCode = 6;</code>
+     * <code>string countryCode = 6;</code>
      */
     public com.google.protobuf.ByteString
         getCountryCodeBytes() {
@@ -1276,36 +1101,37 @@ public  final class Address extends
       }
     }
     /**
-     * <code>optional string countryCode = 6;</code>
+     * <code>string countryCode = 6;</code>
      */
     public Builder setCountryCode(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  
       countryCode_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string countryCode = 6;</code>
+     * <code>string countryCode = 6;</code>
      */
     public Builder clearCountryCode() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      
       countryCode_ = getDefaultInstance().getCountryCode();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string countryCode = 6;</code>
+     * <code>string countryCode = 6;</code>
      */
     public Builder setCountryCodeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  checkByteStringIsUtf8(value);
+      
       countryCode_ = value;
       onChanged();
       return this;
@@ -1313,13 +1139,7 @@ public  final class Address extends
 
     private java.lang.Object zipCode_ = "";
     /**
-     * <code>optional string zipCode = 7;</code>
-     */
-    public boolean hasZipCode() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    /**
-     * <code>optional string zipCode = 7;</code>
+     * <code>string zipCode = 7;</code>
      */
     public java.lang.String getZipCode() {
       java.lang.Object ref = zipCode_;
@@ -1327,16 +1147,14 @@ public  final class Address extends
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          zipCode_ = s;
-        }
+        zipCode_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>optional string zipCode = 7;</code>
+     * <code>string zipCode = 7;</code>
      */
     public com.google.protobuf.ByteString
         getZipCodeBytes() {
@@ -1352,48 +1170,49 @@ public  final class Address extends
       }
     }
     /**
-     * <code>optional string zipCode = 7;</code>
+     * <code>string zipCode = 7;</code>
      */
     public Builder setZipCode(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  
       zipCode_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional string zipCode = 7;</code>
+     * <code>string zipCode = 7;</code>
      */
     public Builder clearZipCode() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      
       zipCode_ = getDefaultInstance().getZipCode();
       onChanged();
       return this;
     }
     /**
-     * <code>optional string zipCode = 7;</code>
+     * <code>string zipCode = 7;</code>
      */
     public Builder setZipCodeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  checkByteStringIsUtf8(value);
+      
       zipCode_ = value;
       onChanged();
       return this;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return this;
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 
@@ -1410,7 +1229,7 @@ public  final class Address extends
     return DEFAULT_INSTANCE;
   }
 
-  @java.lang.Deprecated public static final com.google.protobuf.Parser<Address>
+  private static final com.google.protobuf.Parser<Address>
       PARSER = new com.google.protobuf.AbstractParser<Address>() {
     public Address parsePartialFrom(
         com.google.protobuf.CodedInputStream input,

@@ -4,25 +4,16 @@ import java.util.Random;
 
 import org.springframework.stereotype.Service;
 
+import com.hotel.reviews.proto.HotelReviewInfo;
+
 @Service
 public class HotelRatingService {
-    private Random randomGenerator;
     
-    public HotelRatingService() {
-        randomGenerator = new Random();
-    }
+    private Random randomGenerator = new Random();
         
-    //@HystrixCommand(fallbackMethod = "defaultRating")
-    public String getHotelRating(String productId) throws Exception {
-        int rating = randomGenerator.nextInt(7);
-//        if (rating == 6) {
-//            System.out.println("=================FAILURE===================");
-//            throw new Exception();
-//        }
-        return String.valueOf(rating);
+    public HotelReviewInfo getHotelRating(int hotelId) throws Exception {
+        Double rating = 0d + (5d - 0d) * randomGenerator.nextDouble();
+        return HotelReviewInfo.newBuilder().setHotelId(hotelId).setHotelReviewRating(rating).build();
     }
     
-    public Object defaultRating(String hotelId) {
-        return "0";
-    }
 }
