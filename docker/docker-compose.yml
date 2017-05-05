@@ -2,13 +2,13 @@ version: "2"
 services:
   svc-aggregator:
     build:
-      context: ./svc-aggregator
+      context: ../svc-aggregator
       args:
         COLLECTOR_IP: 10.65.171.9
     image: svc-aggregator
     container_name: hotel-aggregator
     networks:
-      - hotelstack_hotel
+      - docker_hotel
     external_links:
       - zipkin:zipkin
     ports:
@@ -25,7 +25,7 @@ services:
 
   svc-details:
     build:
-      context: ./svc-details
+      context: ../svc-details
       args:
         COLLECTOR_IP: 10.65.171.9
     image: svc-details
@@ -35,7 +35,7 @@ services:
     ports:
       - 10002:10002
     networks:
-      - hotelstack_hotel
+      - docker_hotel
     environment:
       CONSUL_HOST: consul
     # logging:
@@ -46,7 +46,7 @@ services:
 
   svc-pricing:
     build:
-      context: ./svc-pricing
+      context: ../svc-pricing
       args:
         COLLECTOR_IP: 10.65.171.9
     image: svc-pricing
@@ -56,7 +56,7 @@ services:
     ports:
       - 10003:10003
     networks:
-      - hotelstack_hotel
+      - docker_hotel
     environment:
       CONSUL_HOST: consul
     # logging:
@@ -67,7 +67,7 @@ services:
 
   svc-rating:
     build:
-      context: ./svc-rating
+      context: ../svc-rating
       args:
         COLLECTOR_IP: 10.65.171.9
     image: svc-rating
@@ -77,7 +77,7 @@ services:
     ports:
       - 10004:10004
     networks:
-      - hotelstack_hotel
+      - docker_hotel
     environment:
       CONSUL_HOST: consul
     # logging:
@@ -88,7 +88,7 @@ services:
 
   svc-availability:
     build:
-      context: ./svc-availability
+      context: ../svc-availability
       args:
         COLLECTOR_IP: 10.65.171.9
     image: svc-availability
@@ -98,7 +98,7 @@ services:
     ports:
       - 10001:10001
     networks:
-      - hotelstack_hotel
+      - docker_hotel
     environment:
       CONSUL_HOST: consul
     # logging:
@@ -113,8 +113,8 @@ services:
     ports:
       - "11211:11211"
     networks:
-      - hotelstack_hotel
+      - docker_hotel
 
 networks:
-  hotelstack_hotel:
+  docker_hotel:
     external: true

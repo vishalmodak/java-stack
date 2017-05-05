@@ -5,6 +5,10 @@ option java_outer_classname = "Hotel";
 
 package com.hotel.proto;
 
+message HotelsList {
+    repeated HotelDetails hotel = 1;
+}
+
 message HotelDetails{
     int64 hotelId = 1;
     string hotelName = 2;
@@ -45,4 +49,11 @@ enum Amenity {
     FREE_PARKING = 10;
     SPA = 11;
     PET_FRIENDLY = 12;
+    AIR_CONDITIONING = 13;
+    COFFEE_SHOP = 14;
+    HEATED_POOL = 15;
+    MASSAGE = 16;
+    NIGHTCLUB = 17;
+    CONCIERGE = 18;
+    DRY_CLEANING = 19;
 }

@@ -60,6 +60,34 @@ public enum Amenity
    * <code>PET_FRIENDLY = 12;</code>
    */
   PET_FRIENDLY(12),
+  /**
+   * <code>AIR_CONDITIONING = 13;</code>
+   */
+  AIR_CONDITIONING(13),
+  /**
+   * <code>COFFEE_SHOP = 14;</code>
+   */
+  COFFEE_SHOP(14),
+  /**
+   * <code>HEATED_POOL = 15;</code>
+   */
+  HEATED_POOL(15),
+  /**
+   * <code>MASSAGE = 16;</code>
+   */
+  MASSAGE(16),
+  /**
+   * <code>NIGHTCLUB = 17;</code>
+   */
+  NIGHTCLUB(17),
+  /**
+   * <code>CONCIERGE = 18;</code>
+   */
+  CONCIERGE(18),
+  /**
+   * <code>DRY_CLEANING = 19;</code>
+   */
+  DRY_CLEANING(19),
   UNRECOGNIZED(-1),
   ;
 
@@ -115,6 +143,34 @@ public enum Amenity
    * <code>PET_FRIENDLY = 12;</code>
    */
   public static final int PET_FRIENDLY_VALUE = 12;
+  /**
+   * <code>AIR_CONDITIONING = 13;</code>
+   */
+  public static final int AIR_CONDITIONING_VALUE = 13;
+  /**
+   * <code>COFFEE_SHOP = 14;</code>
+   */
+  public static final int COFFEE_SHOP_VALUE = 14;
+  /**
+   * <code>HEATED_POOL = 15;</code>
+   */
+  public static final int HEATED_POOL_VALUE = 15;
+  /**
+   * <code>MASSAGE = 16;</code>
+   */
+  public static final int MASSAGE_VALUE = 16;
+  /**
+   * <code>NIGHTCLUB = 17;</code>
+   */
+  public static final int NIGHTCLUB_VALUE = 17;
+  /**
+   * <code>CONCIERGE = 18;</code>
+   */
+  public static final int CONCIERGE_VALUE = 18;
+  /**
+   * <code>DRY_CLEANING = 19;</code>
+   */
+  public static final int DRY_CLEANING_VALUE = 19;
 
 
   public final int getNumber() {
@@ -148,6 +204,13 @@ public enum Amenity
       case 10: return FREE_PARKING;
       case 11: return SPA;
       case 12: return PET_FRIENDLY;
+      case 13: return AIR_CONDITIONING;
+      case 14: return COFFEE_SHOP;
+      case 15: return HEATED_POOL;
+      case 16: return MASSAGE;
+      case 17: return NIGHTCLUB;
+      case 18: return CONCIERGE;
+      case 19: return DRY_CLEANING;
       default: return null;
     }
   }

@@ -2,11 +2,13 @@ package com.hotel.proto;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import org.junit.Test;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.util.JsonFormat;
 
 
@@ -38,5 +40,20 @@ public class HotelProtosTest {
         String json = new String(Files.readAllBytes(Paths.get(fileName)));
         JsonFormat.parser().ignoringUnknownFields().merge(json, builder.clear());
         assertEquals(details, builder.build());
+    }
+    
+    @Test
+    public void addressSerialization() throws InvalidProtocolBufferException, IOException {
+        Address address = Address.newBuilder()
+                .setStreetAddress("Paseo Malecón Sn Lote 5")
+                .setCity("San Jose del Cabo")
+                .setState("Blah")
+                .setStateCode("UH")
+                .setCountry("Mexico")
+                .setCountryCode("MX")
+                .setZipCode("23405")
+                .build();
+        String fileName = "./src/test/data/address.json";
+        Files.write(Paths.get(fileName), JsonFormat.printer().print(address).getBytes());
     }
 }

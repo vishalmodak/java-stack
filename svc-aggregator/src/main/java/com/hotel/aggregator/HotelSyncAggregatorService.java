@@ -36,7 +36,7 @@ public class HotelSyncAggregatorService {
     }
     
 
-    @HystrixCommand(fallbackMethod = "defaultReviews")
+//    @HystrixCommand(fallbackMethod = "defaultReviews")
     public HotelReviewInfo getHotelReviews(final String hotelId) throws Exception {
         LOG.info("getHotelRatings() invoked....");
         return hotelRatingClient.getHotelRating(hotelId);

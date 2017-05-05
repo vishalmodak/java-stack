@@ -19,7 +19,7 @@ services:
     ports:
         - 9200:9200
     networks:
-      - hotelstack_hotel
+      - docker_hotel
     healthcheck:
       test: ['CMD', 'curl', '-f', '-u', 'elastic:changeme', 'http://localhost:9200']
 
@@ -41,7 +41,7 @@ services:
     links:
       - elasticsearch
     networks:
-      - hotelstack_hotel
+      - docker_hotel
 
   kibana:
     image: docker.elastic.co/kibana/kibana:5.3.0
@@ -52,7 +52,7 @@ services:
     ports:
         - 5601:5601
     networks:
-      - hotelstack_hotel
+      - docker_hotel
     healthcheck:
       test: ['CMD', 'curl', '-f', 'http://localhost:5601/login']
 
@@ -63,7 +63,7 @@ services:
     # inside the container, where Filebeat can find them.
     # volumes: ['/var/log:/mnt/log:ro']
     networks:
-      - hotelstack_hotel
+      - docker_hotel
     depends_on:
       elasticsearch:
         condition: service_healthy
@@ -72,5 +72,5 @@ volumes:
     driver: local
 
 networks:
-  hotelstack_hotel:
+  docker_hotel:
     external: true

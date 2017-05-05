@@ -2,11 +2,12 @@ package com.hotel.aggregator.callable;
 
 import java.util.concurrent.Callable;
 
+import com.google.protobuf.GeneratedMessageV3;
 import com.hotel.aggregator.clients.HotelAvailabilityClient;
 import com.hotel.rate.proto.HotelPricePreview;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-public class AvailabilityCallable implements Callable<HotelPricePreview> {
+public class AvailabilityCallable implements Callable<GeneratedMessageV3> {
     private String hotelId;
     
     private HotelAvailabilityClient hotelAvailabilityClient;

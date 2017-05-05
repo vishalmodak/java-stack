@@ -1,0 +1,102 @@
+EANHotelID,SequenceNumber,Name,Address1,Address2,City,StateProvince,PostalCode,Country,Latitude,Longitude,AirportCode,PropertyCategory,PropertyCurrency,StarRating,Confidence,SupplierType,Location,ChainCodeID,RegionID,HighRate,LowRate,CheckInTime,CheckOutTime
+674995,99999999,Elgin apartments,5 Lossie Wynd,,Elgin,,IV30 1PU,GB,57.64919,-3.31338,INV,16,GBP,.0,,ESR,,3114,,0,0,,
+674961,99999999,KYOSTAY IROHA TOJI,11-1, Toji Higashimonzencho, Minami-ku,,Kyoto,,601-8428,JP,34.98029,135.74941,,16,JPY,2.5,,ESR,Near Toji Temple,,,0,0,,
+674918,99999999,More Residence·Guangzhou Huanshidong,No.16, Tianhe Road, Haiyou Building,,Guangzhou,,,CN,23.13693,113.30566,,16,CNY,3.5,,ESR,In Guangzhou (Yuexiu),,,0,0,11 AM,2 PM
+565395,99999999,Málaga Living Apartments,C/ Pintor Martinez Cubells, 12,,Malaga,,29017,ES,36.72321,-4.37051,AGP,16,EUR,3.5,,ESR,In Malaga (Malaga-Este),,,62.41,61.41,,
+566497,99999999,Lionshead Arcade by Berkshire Hathaway,531 E Lionshead Mall,,Vail,CO,81657,US,39.64506,-106.38904,EGE,7,USD,3.5,,ESR,Near Vail Ski Resort,,,711.06,710.06,4 PM,10 AM
+676020,99999999,Casa Camilla Holiday,Località Virti, 27,,Folgaria,,38064,IT,45.94738,11.23818,,16,EUR,.0,,ESR,Near Lake Lavarone,,,0,0,3 PM,10 AM
+676040,99999999,2 Pièces - parc paysager avec vue mer,33 avenue Wester Wemyss,,Cannes,,06400,FR,43.55298,6.99067,,16,EUR,.0,,ESR,In Cannes (La Bocca),,,0,0,3 PM,10 AM
+675745,99999999,Downtown Apartment with Amazing Views,2017/17 Wakefield,,Auckland,,1010,NZ,-36.85337,174.76439,,16,NZD,3.5,,ESR,Near University of Auckland,,,0,0,,
+605051,99999999,City Life City Jungle,No 13 Aly 42 Ln 645 Hai'an Rd,,Jian,,973,TW,23.94140,121.58712,,6,TWD,3.5,,ESR,Near Zhikaxuan Forest Park,3283,,81.0686,60.8007,3 PM,11 AM
+604542,99999999,Garden House,No.41-1, Haicheng St., North Dist.,,Tainan,,704,TW,23.00151,120.19876,,5,TWD,3.0,,ESR,Near Chihkan Tower,3283,,111.167,110.167,3 PM,11 AM
+604410,99999999,Belambra Hotels & Resorts Les Estagnots Pinède,Les Estagnots-Pinede,,Seignosse,,40510,FR,43.69086,-1.43695,,1,EUR,.0,,ESR,In Seignosse (Cote Landaise),2499,,150.0627,149.0627,5 PM,10 AM
+608329,99999999,Malaga Apartamentos Pozos Dulces,Pozos Dulces 22,,Malaga,,29008,ES,36.72199,-4.42384,AGP,16,EUR,3.5,,ESR,Near Malaga Cathedral,,,73.5612,66.2051,3:00 PM,noon
+608704,99999999,Show Motel,5-14, Geumo 14-gil, Dong-myeon,,Yangsan,,50650,KR,35.31696,129.02650,,1,KRW,3.0,,ESR,In Yangsan,,,49.42,41.42,4 PM,11 AM
+608177,99999999,ZEN Rooms Akbar Kebon Kawung,Unik Hotel Jalan H Akbar no 12 Kebon Kaw,,Bandung,,,ID,-6.91198,107.60041,,1,IDR,3.0,,ESR,Near Santosa Hospital,3676,,23.3309,22.3309,2 PM,noon
+608220,99999999,ZEN Rooms Palanan,1720 Dian Street, Brgy. Palanan,Dian Suites,Makati,,1235,PH,14.55711,121.00370,,1,PHP,2.5,,ESR,Near Ayala Center,3676,,34.93,33.93,2 PM,noon
+676338,99999999,Nouvel Oasis,147 Avenue des Minimes,,Toulouse,,31200,FR,43.62481,1.43407,,16,EUR,.0,,ESR,Near Basilique Saint-Sernin,,,0,0,,
+670195,99999999,Tang Villa,No.225, Sec. 1, Zhongxing Rd,,Taitung,,,TW,22.76792,121.14154,,5,TWD,3.0,,ESR,In Taitung (Taitung City Centre),,,0,0,,
+670338,99999999,Hotel Tanca Irde,Road to Poggio dei Pini,,Capoterra,,09012,IT,39.15162,8.99436,,4,EUR,.0,,ESR,Near Maddalena Beach,,,0,0,2 PM,10 AM
+670129,99999999,Fundee Hostel at Chiang Mai,172/1 Rachamanka Road, T. Phrasing,A. Muang,Chiang Mai,,50200,TH,18.78575,98.97916,,12,THB,2.0,,ESR,Near Chiang Mai City Arts & Cultural Center,,,0,0,2 PM,noon
+676724,99999999,La Vue Parfaite,4 Rhus street,,Cape Town,,7150,ZA,-34.16016,18.87989,,14,ZAR,4.0,,ESR,In Cape Town (Gordon's Bay),,,0,0,,
+684719,99999999,Good Stay Itaewon - Hostel,52 Itaewon-ro 14gil, Yongsan-gu,,Seoul,,140-201,KR,37.53224,126.99152,,12,KRW,2.0,,ESR,,,,0,0,3 PM,11 AM
+684596,99999999,Koh Chang Wave Villa A,Villa 10/11, Moo 1,,Ko Chang,,23170,TH,12.09903,102.35553,,14,THB,4.0,,ESR,,4279,,0,0,,
+685598,99999999,La Digue Luxury Beach Bungalow,L'Union,,La Digue,,,SC,-4.35576,55.82618,,6,EUR,3.5,,ESR,,,,0,0,,
+685446,99999999,Ocean Cliff Court,20a Irishtown Road,,Kuaotunu,,3592,NZ,-36.72333,175.73165,AKL,17,NZD,4.0,,ESR,,,,153.6388,152.6388,,
+685512,99999999,Borghese Holidays Apartments,Various Address,,Rome,,00185,IT,41.89731,12.51043,,16,EUR,.0,,ESR,,,,0,0,,
+686448,99999999,Flatguest Sweet Urban,Calle Manuel González Martín 13,,Las Palmas de Gran Canaria,,35006,ES,28.12949,-15.43117,,16,EUR,3.5,,ESR,,4371,,0,0,,
+686173,99999999,Sun Suites - Lakeview Suites,15 Iceboat Terrace,,Toronto,ON,,CA,43.64052,-79.39701,,7,CAD,4.0,,ESR,,,,0,0,,
+686216,99999999,Sheila's Place,Masaplod Norte,,Dauin,,6217,PH,9.17542,123.25086,,6,PHP,2.5,,ESR,,,,27.09,26.09,1 PM,noon
+686064,99999999,Lemon Tree Boutique Sriracha,273/3 Moo 6, Tungsukhla,,Si Racha,,20230,TH,13.11848,100.93855,,6,THB,2.5,,ESR,,,,0,0,,
+686491,99999999,Apartamento Suite Lux Girona,Carrer Pou Rodo 7  2-C,,Girona,,,ES,41.98866,2.82489,,16,EUR,3.0,,ESR,,,,0,0,,
+687318,99999999,Matterhorngruss Apartments,Steinmattstrasse 74,,Zermatt,,3920,CH,46.01691,7.74817,,16,CHF,3.5,,ESR,,,,0,0,,
+618814,99999999,ZEN Rooms Bunut Sari Legian,Jalan Bunut Sari No. 8, Kuta,Siesta Legian Hotel,Legian,,80361,ID,-8.70722,115.17250,,1,IDR,3.0,,ESR,Near Carrefour Plaza Kuta,3676,,25.3823,24.3823,,
+581539,99999999,The Carraighs,4 Askop Ridge,,The Crags,,,ZA,-33.97713,23.46674,,11,ZAR,3.0,,ESR,In The Crags (Garden Route),3486,,67.29,66.29,2 PM,10 AM
+673189,99999999,Portela Houses,Kapsali,,Viannos,,70004,GR,34.99903,25.39760,,16,EUR,3.5,,ESR,In Keratókambos,,,139.0594,131.0659,,
+612880,99999999,Hotel Carol,Via Archimede 13,Villamarina,Cesenatico,,47042,IT,44.17291,12.43277,RMI,1,EUR,3.0,,ESR,In Cesenatico (Villamarina),,,192.3909,90.5369,,
+618923,99999999,ZEN Rooms Hang Tuah Sanur,Diwangkara Beach Hotel and Resort,Jl Hang Tuah No 84 Sanur,Denpasar,,80227,ID,-8.67422,115.26219,,1,IDR,3.0,,ESR,Near Sanur Beach,3676,,45.82,44.82,,
+609365,99999999,Yatomisou,614 Ourahei,Fujitsu,Tara,,849-1613,JP,32.96299,130.21909,,20,JPY,3.5,,ESR,In Tara,,,244.69,243.69,4 PM,10 AM
+686909,99999999,Kangaroo Lookout,58 Fourteenth Street,,Hepburn Springs,VC,3461,AU,-37.31152,144.13022,,17,AUD,3.5,,ESR,,,,0,0,,
+676833,99999999,Europea - Opéra Bourse Résidence,Opéra,,Paris,,75001,FR,48.86705,2.33569,,16,EUR,.0,,ESR,Near Galeries Lafayette,,,0,0,,
+673232,99999999,Pousada Romana,Via Giovanni Giolitti 198,,Rome,,00185,IT,41.89312,12.51302,FCO,6,EUR,.0,,ESR,In Rome (Esquilino),,,0,0,,
+673598,99999999,516 The Granger,Beach Road, 516 The Granger,Granger Bay,Cape Town,,,ZA,-33.90003,18.41160,,16,ZAR,4.0,,ESR,Near Cape Town Stadium,,,0,0,,
+582346,99999999,Villa Amalia,Finikia,,Santorini,,,GR,36.46326,25.39516,JTR,14,EUR,4.5,,ESR,In Santorini (Oia),,,308.2938,307.2938,3 PM,11:30 AM
+582323,99999999,Le Site,Contrada Guappi Falghero, SNC,,Ostuni,,72017,IT,40.66998,17.61559,BDS,14,EUR,.0,,ESR,In Ostuni,,,0,0,,
+561181,99999999,EQC Hotel 52,1234 Test Street,,Région Test,,,US,.00150,179.99850,SEA,1,USD,,,ESR,In Région Test,,,0,0,,
+572840,99999999,OTJ Pride Guest House,1073 Sunbird Avenue,,Hazyview,,1242,ZA,-25.04110,31.14397,,6,ZAR,3.0,,ESR,Near Perry's Bridge Reptile Park,3486,,116.36,53.36,,
+672662,99999999,Blockhead Bed and Breakfast,No. 165, Lane 360, Chuanguang Rd.,,Taitung,,950,TW,22.76426,121.14766,TTT,6,TWD,3.0,,ESR,In Taitung (Taitung City Centre),,,0,0,,
+679146,99999999,Paddy View Villa,Jl. Griya Mas, Br. Pempatan,Desa Tumbak Bayuh,Canggu,,80351,ID,-8.61906,115.13941,,14,IDR,4.0,,ESR,,,,0,0,,
+672485,99999999,Culture Club Backpackers - Hostel,94/14 Moo 6, Baan Tai, Haad Rin,,Koh Phangan,,84280,TH,9.67504,100.06517,,12,THB,2.0,,ESR,Near Full Moon Beach,,,0,0,,
+574626,99999999,Sumire Inn,Asahi-cho 4-30,,Furano,,076-0026,JP,43.34739,142.38902,AKJ,20,JPY,2.5,,ESR,Near Museum of Kitano Kunikara,,,0,0,4 PM,10 AM
+574008,99999999,Cypress Cove Nudist Resort & Spa,4425 Pleasant Hill Road,,Kissimmee,FL,34746,US,28.15845,-81.43990,MCO,3,USD,3.0,,ESR,Near Osceola Schools Environmental Study Center,,,0,0,2 PM,9 AM
+583311,99999999,Sea View High End Rooftop Triplex,Ben Yehuda St 125-143,,Tel Aviv,,,IL,32.08635,34.77287,,16,USD,.0,,ESR,Near Gordon Beach,,,592.9566,443.45,3:00 PM,10:00 AM
+679003,99999999,Cosy Cute and Sunny Studio,403/3 Whittaker Place,,Auckland,,1010,NZ,-36.85719,174.76587,,16,NZD,3.0,,ESR,Near University of Auckland,,,0,0,,
+671569,99999999,Watermark Hotel Kaohsiung Station,No.437, Anning St., Sanmin District,,Kaohsiung,,80757,TW,22.64036,120.30390,,1,TWD,3.5,,ESR,In Kaohsiung (Kaohsiung City Centre),,,0,0,3 PM,noon
+547052,99999999,Hôtel Moderne,1 rue Raymond Poincaré,,Parmain,,95620,FR,49.11573,2.20983,,1,EUR,.0,,ESR,Near Isle Adam Golf,,,75.9345,64.9295,,
+573524,99999999,Nicolaus Club Marina Sporting,Via del Mare Snc,,Orosei,,08028,IT,40.37268,9.71942,,4,EUR,.0,,ESR,In Orosei (Gulf of Orosei),,,213.0994,212.0994,5 PM,10 AM
+573458,99999999,Tainan Happy House,No.12-1, Lane. 32, Sec. 3, Haian Rd.,North District,Tainan,,,TW,23.00148,120.19995,,6,TWD,3.0,,ESR,Near Chihkan Tower,,,0,0,3:00 PM,11:00 AM
+678914,99999999,Cervino Valley House Rododendro,Via Guido Rey No. 19,,Cervinia,,11021,IT,45.93339,7.62935,,16,EUR,.0,,ESR,Near Breuil-Cervinia Gondola,,,0,0,1 PM,10 AM
+600789,99999999,Jitvilai Place,38/7 U Thong Road,T. Horrattanachai,Ayutthaya,,13000,TH,14.36084,100.57957,,1,THB,2.5,,ESR,Near Ayutthaya Historical Park,,,0,0,2 PM,noon
+604258,99999999,Un séjour à Nantes - Loft Cassard,6 allée Cassard,,Nantes,,44000,FR,47.21442,-1.56342,,16,EUR,.0,,ESR,Near Passage Pommeraye,,,89.7145,88.7145,,
+672571,99999999,6 Perkijt Golf Villa 20 Self catering,20 Perkijt,,Langebaan,,,ZA,-33.07348,18.05600,,14,ZAR,3.5,,ESR,Near Langebaan Golf Course,3486,,0,0,,
+672528,99999999,6 Barefootin Self catering,19 Schaapenzicht,,Langebaan,,,ZA,-33.09008,18.03132,,17,ZAR,3.0,,ESR,Near Langebaan Beach,3486,,0,0,,
+678719,99999999,Modern Three Bedroom Apartment,505/18 Beach Road,,Auckland,,1010,NZ,-36.84560,174.77198,,16,NZD,3.5,,ESR,Near University of Auckland,,,0,0,,
+672505,99999999,Giardini Biennale WiFi Apartment,Sestiere Castello, Calle Ancore, 1047,,Venice,,30122,IT,45.43144,12.35615,,16,EUR,.0,,ESR,In Venice (Castello),,,0,0,,
+680852,99999999,Palm Village,35/49 Soi 102, Tang Rotfai Tawantok,,Hua Hin,,77010,TH,12.54734,99.94236,,14,THB,3.0,,ESR,In Hua Hin (Nong Kae),,,0,0,2 PM,noon
+663995,99999999,Serene 1BR in W Vancouver by Sonder,Marine Dr and Odlum Ct,,West Vancouver,BC,V8W2T4,CA,49.37507,-123.28396,,16,CAD,3.5,,ESR,In West Vancouver (Whytecliff),4132,,0,0,4 PM,11 AM
+601493,99999999,Happy House B and B,No 59 Jianhua Rd,,Hualien,,970,TW,23.99383,121.57825,,5,TWD,3.5,,ESR,Near Tzu Chi Cultural Park,3283,,81.1584,67.6317,3 PM,11 AM
+680334,99999999,Town House - TreasureRome Collection,via Arco della Pace 12,,Rome,,,IT,41.90019,12.47130,,16,EUR,.0,,ESR,Near Piazza Navona,,,0,0,,
+577603,99999999,Rock Cascade Home Stay,Circuler Road,,Polonnaruwa,,51000,LK,7.93881,81.00467,,6,USD,,,ESR,Near Polonnaruwa Archaeological Museum,,,0,0,1:00 PM,noon
+374352,246514,Mitsis Laguna Exclusive Resort & Spa - All Inclusive,Anissaras,,Hersonissos,,70014,GR,35.33733,25.36577,HER,8,EUR,5.0,52,ESR,Near Aquaworld Aquarium,,,339.753,142.434,,
+512723,246552,Delfi Hotel & Spa,Umurca Mah Dere Sok No 43,,Bodrum,,48400,TR,37.03472,27.43804,BJV,1,EUR,.0,,ESR,Near Bodrum Castle,,,67.5535,27.8648,2:00 PM,noon
+579707,99999999,Muttererhof,Nattererstr. 24,,Mutters,,6162,AT,47.23038,11.37555,INN,30,EUR,3.0,,ESR,Near Mutterer Alm Cable Car,,,249.1172,248.1172,,noon
+214684,246604,Americas Best Value Inn,2275 8th St NW,,Winter Haven,FL,33881,US,28.04671,-81.73509,MCO,2,USD,2.0,52,ESR,Near Inman Park,2088,,80.32,79.99,,
+283638,247727,Hotel Globales Gardenia,Avenida de Carvajal, 2,,Fuengirola,,29640,ES,36.56490,-4.60125,AGP,1,EUR,3.0,52,ESR,Near Torreblanca Beach,2755,,184.6633,116.6308,,
+582515,99999999,City Life Classic City,No 16 Minquan 6th St,,Hualien,,970,TW,23.98665,121.62329,,6,TWD,3.5,,ESR,In Hualien (Hualien City Centre),3283,,54.0463,43.9123,3 PM,11 AM
+645678,99999999,ZEN Rooms Lovina Rice Field and Ocean View,Jalan Raya Tukad Mungga,,Buleleng,,81111,ID,-8.13993,115.05124,,6,IDR,3.5,,ESR,In Buleleng,3676,,0,0,,
+630490,99999999,Oakwood Miracle Mile,5659 West 8th Street,,Los Angeles,CA,90036,US,34.06069,-118.35263,LAX,16,USD,4.0,,ESR,Near La Brea Tar Pits,,,194.0703,193.0703,3:30 PM,noon
+650962,247789,Aipana Plaza Hotel,Praça do Centro Civico, 974,Centro,Boa Vista,,69301-380,BR,2.81888,-60.67246,,1,BRL,3.0,,ESR,Near Miners Monument,,,120.1278,102.5091,,
+172818,247852,Lakeside Inn,100 N Alexander St,,Mount Dora,FL,32757,US,28.79868,-81.64576,MCO,1,USD,3.0,52,ESR,Near Royellou Museum,,,159.17,149.17,,
+186672,247871,Lucy Hotel,L. Voudouri 10,,Chalcis,,34100,GR,38.46340,23.59059,ATH,1,EUR,4.0,52,ESR,Near Athanaton Square,,,130.9011,96.2016,,
+490888,247881,Starlight luxury rooms,Sinjska 2,,Split,,21000,HR,43.51040,16.43876,SPU,6,EUR,4.0,,ESR,Near Diocletian's Palace,,,102.3017,83.5301,,
+216622,247887,Harrah’s Resort Southern California,777 Harrahs Rincon Way,,Valley Center,CA,92082,US,33.26606,-116.95394,SAN,3,USD,3.5,82,ESR,In the suburbs,498,,343.2352,113.0587,,
+162499,247895,Sandman Hotel Montreal-Longueuil,999 rue de Serigny,,Longueuil,QC,J4K2T1,CA,45.52554,-73.52273,YUL,1,CAD,3.0,52,ESR,Near La Ronde Six Flags,2167,,182,181,,
+577921,248791,Fairfield Inn & Suites Sacramento Airport Woodland,2100 Freeway Drive,,Woodland,CA,95776,US,38.67524,-121.72493,SMF,1,USD,2.5,,ESR,Near Heidrick Ag History Center,44,,159.2477,116.1735,3 PM,noon
+590544,99999999,Mavrikos Hotel - All Inclusive,Tsilivi,,Zakynthos,,29100,GR,37.80986,20.87086,ZTH,1,EUR,3.0,,ESR,In Zakynthos (Tsilivi),,,106.9467,91.6686,2:00 PM,noon
+606749,99999999,Sweet Inn - King George Street,King George 59,,Jerusalem,,9422108,IL,31.77561,35.21817,,16,USD,.0,,ESR,Near Tower of David Museum of the History of Jerusalem,,,0,0,4 PM,11 AM
+549016,248805,Hotel Kaiserstuhl,Brünigstrasse 232,Bürglen,Lungern,,6078,CH,46.81349,8.17555,ZRH,1,CHF,3.5,,ESR,Near More Gallery,,,147.2422,137.6837,3:00 PM,11:00 AM
+617025,99999999,Airy Ubud Monkey Forest Nyuh Bojog 10 Bali,Jl Nyuh bojog No 10 Br Nyuh,,Ubud,,80571,ID,-8.52218,115.25675,,1,IDR,3.0,,ESR,Near Ubud Monkey Forest,3784,,0,0,2 PM,noon
+604198,99999999,Hotel Silvano,Via Generale Ardoino, 79,,Diano Marina,,18013,IT,43.91296,8.08690,,1,EUR,3.0,,ESR,Near Diano Marina Port,,,90.5369,68.6698,,
+589926,99999999,Ratanak Boutique & Spa,BBU Road, Vihearchen Village,Svaydangkum Communce,Siem Reap,,,KH,13.34828,103.84627,,1,USD,3.5,,ESR,Near Psa Krom Market,,,147.6054,46.7411,,
+310296,248865,Der Westerhof Tegernsee Hotel,Olaf-Gulbransson-Straße 19,,Tegernsee,,83684,DE,47.71748,11.76163,MUC,1,EUR,3.0,5,ESR,In Tegernsee (Tegernsee),,,350.37,202.37,,
+631749,248884,Quest Macquarie Park,71 Epping Road,,Macquarie Park,NW,2113,AU,-33.78788,151.12737,SYD,16,AUD,4.0,,ESR,Near Macquarie University,3016,,292.1928,209.5683,,
+329732,248892,Boutique hotel Casa del Sole,Strada Romulus 12,,Timisoara,,300238,RO,45.74423,21.22153,TSR,1,RON,4.0,100,ESR,Near Romanian Orthodox Cathedral,,,97.35,67.35,,
+334753,248893,Rizzo Center,150 DuBose Home Lane,,Chapel Hill,NC,27517,US,35.90584,-79.00908,RDU,1,USD,3.5,5,ESR,Near Finley Golf Course,2090,,245,225,,
+505169,248898,City Suites Tauranga,32 Cameron Road,,Tauranga,,3001,NZ,-37.68057,176.16651,TRG,22,NZD,4.5,,ESR,Near Monmouth Redoubt,,,138.2091,100.7052,,
+616707,99999999,Waldorf Astoria Chengdu,No.1199 Tianfu Avenue North,High-tech Zone,Chengdu,,610041,CN,30.58719,104.06570,CTU,1,CNY,5.0,,ESR,In Chengdu (Chengdu City Centre),2194,,0,0,,noon
+602094,99999999,The Bay Guesthouse - Hostel,19-1, Gunam-ro 41beon-gil, Haeundae-gu,,Busan,,48095,KR,35.16141,129.16219,,12,KRW,2.0,,ESR,In Busan (Haeundae),,,71.2687,59.3913,,
+602435,99999999,Peruvian Hostal Plaza de Armas,Calle Santa Catalina 385,,Cusco,,,PE,-13.51692,-71.97637,,12,USD,2.0,,ESR,In Cusco (Cusco Historic Center),,,81.8337,30.6873,,
+604945,99999999,Dream Garden,No. 81-18 Zhongxiao,,Shoufeng,,974,TW,23.92530,121.54622,,5,TWD,3.0,,ESR,In Shoufeng,3283,,121.2337,80.8229,3 PM,11 AM
+633573,99999999,Bella Vista Sakaigahama,1344-2 Urasaki-cho,,Onomichi,,720-0551,JP,34.39225,133.28772,,1,JPY,4.0,,ESR,In Fukuyama,2884,,0,0,,
+625624,99999999,Tamarack Lodge,Fyfett Farm,Otterford,Chard,,TA20 3QP,GB,50.92520,-3.09281,,11,GBP,3.5,,ESR,In a rural location,2327,,0,0,3:30 PM,10:00 AM
+248301,243833,Hotel Opera,Nils Ericsonsgatan 23,,Gothenburg,,411 03,SE,57.70795,11.97170,GOT,1,SEK,4.0,52,ESR,Near Gothenburg City Museum,2763,,274.97,142.72,,

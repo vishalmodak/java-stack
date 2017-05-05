@@ -13,9 +13,9 @@ public interface ReviewOrBuilder extends
   long getReviewId();
 
   /**
-   * <code>int64 reviewRating = 2;</code>
+   * <code>int32 reviewRating = 2;</code>
    */
-  long getReviewRating();
+  int getReviewRating();
 
   /**
    * <code>string reviewText = 3;</code>

@@ -27,7 +27,7 @@ public class SwaggerConfig {
     }
     
     private Predicate<String> endpoints() {
-        return regex("/hotel/.*");
+        return regex("/rating/.*");
     }
     
     private ApiInfo apiInfo() {

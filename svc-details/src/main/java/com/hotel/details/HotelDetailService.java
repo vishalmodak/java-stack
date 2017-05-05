@@ -12,10 +12,12 @@ import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.protobuf.util.JsonFormat;
 import com.hotel.proto.HotelDetails;
+import com.hotel.proto.HotelsList;
 
 @Service
 public class HotelDetailService {
@@ -23,25 +25,20 @@ public class HotelDetailService {
     private static final Logger LOG = LoggerFactory.getLogger(HotelDetailService.class);
 
     private Map<Long, HotelDetails> detailsMap = new HashMap<>();
-    private long delay = 0;
-    private boolean enableFailures;
     
-    public HotelDetails getHotelDetails(String hotelId) {
-        LOG.info("detailsMap (size); " + detailsMap.size());
-        HotelDetails details = detailsMap.get(Long.valueOf(hotelId));
-        return details;
+    @Autowired
+    private RandomHotelGenerator hotelGenerator;
+    
+    public HotelDetails getHotelDetails(Long hotelId) throws Exception {
+//        HotelDetails details = detailsMap.get(Long.valueOf(hotelId));
+        return hotelGenerator.build(hotelId);
     }
 
-    public void setDelay(long delay) {
-        this.delay = delay;
-        System.out.println("Delay (in secs) = " + (this.delay/1000));
-    }
+    public HotelsList getHotelList(int pageSize) throws Exception {
+      return hotelGenerator.build(pageSize);
+  }
     
-    public void toggleFailures() {
-        this.enableFailures = this.enableFailures ? false : true;
-    }
-    
-    @PostConstruct
+//    @PostConstruct
     public void loadHotels() {
         HotelDetails.Builder hotelDetailsBuilder = HotelDetails.newBuilder();
         try (Stream<Path> stream = Files.list(Paths.get("./mock-data"))) {

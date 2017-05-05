@@ -44,6 +44,7 @@ dependencies {
     compile "io.prometheus:simpleclient_dropwizard:${prometheus_version}"
     compile("io.springfox:springfox-swagger2:2.5.0")
     compile("io.springfox:springfox-swagger-ui:2.5.0")
+    
     testCompile("org.springframework.boot:spring-boot-starter-test") 
 }
 

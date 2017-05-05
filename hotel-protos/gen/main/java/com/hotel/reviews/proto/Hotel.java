@@ -38,7 +38,7 @@ public final class Hotel {
       "hotelReviewRating\030\002 \001(\001\0220\n\007reviews\030\003 \003(\013" +
       "2\037.com.hotel.reviews.proto.Review\"D\n\006Rev" +
       "iew\022\020\n\010reviewId\030\001 \001(\003\022\024\n\014reviewRating\030\002 " +
-      "\001(\003\022\022\n\nreviewText\030\003 \001(\tB\tB\005HotelP\001b\006prot" +
+      "\001(\005\022\022\n\nreviewText\030\003 \001(\tB\tB\005HotelP\001b\006prot" +
       "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

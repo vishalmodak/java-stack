@@ -11,7 +11,7 @@ import com.hotel.reviews.proto.HotelReviewInfo;
 @FeignClient("svc-rating")
 public interface HotelRatingClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/hotel/rating/{hotelId}", consumes={"application/x-protobuf"})
+    @RequestMapping(method = RequestMethod.GET, value = "/rating/{hotelId}", consumes={"application/x-protobuf"})
     @Cacheable("ratings")
     HotelReviewInfo getHotelRating(@PathVariable("hotelId") String hotelId);
     

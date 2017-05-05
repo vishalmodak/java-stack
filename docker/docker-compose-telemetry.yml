@@ -16,7 +16,7 @@ services:
     ports:
       - '9090:9090'
     networks:
-      - hotelstack_hotel
+      - docker_hotel
 
   node-exporter:
     image: prom/node-exporter
@@ -24,7 +24,7 @@ services:
     ports:
       - '9100:9100'
     networks:
-      - hotelstack_hotel
+      - docker_hotel
 
   grafana:
     image: grafana/grafana
@@ -35,7 +35,7 @@ services:
     ports:
       - "3000:3000"
     networks:
-      - hotelstack_hotel
+      - docker_hotel
 
   zipkin:
     image: openzipkin/zipkin
@@ -44,8 +44,8 @@ services:
       - 9410:9410
       - 9411:9411
     networks:
-      - hotelstack_hotel
+      - docker_hotel
       
 networks:
-  hotelstack_hotel:
+  docker_hotel:
     external: true

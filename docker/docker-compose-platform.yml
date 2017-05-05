@@ -3,7 +3,7 @@ networks:
   hotel:
 
 services:
-  consul1:
+  consul:
     image: consul
     container_name: consul
     ports:

@@ -16,7 +16,7 @@ public  final class Review extends
   }
   private Review() {
     reviewId_ = 0L;
-    reviewRating_ = 0L;
+    reviewRating_ = 0;
     reviewText_ = "";
   }
 
@@ -52,7 +52,7 @@ public  final class Review extends
           }
           case 16: {
 
-            reviewRating_ = input.readInt64();
+            reviewRating_ = input.readInt32();
             break;
           }
           case 26: {
@@ -94,11 +94,11 @@ public  final class Review extends
   }
 
   public static final int REVIEWRATING_FIELD_NUMBER = 2;
-  private long reviewRating_;
+  private int reviewRating_;
   /**
-   * <code>int64 reviewRating = 2;</code>
+   * <code>int32 reviewRating = 2;</code>
    */
-  public long getReviewRating() {
+  public int getReviewRating() {
     return reviewRating_;
   }
 
@@ -151,8 +151,8 @@ public  final class Review extends
     if (reviewId_ != 0L) {
       output.writeInt64(1, reviewId_);
     }
-    if (reviewRating_ != 0L) {
-      output.writeInt64(2, reviewRating_);
+    if (reviewRating_ != 0) {
+      output.writeInt32(2, reviewRating_);
     }
     if (!getReviewTextBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reviewText_);
@@ -168,9 +168,9 @@ public  final class Review extends
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, reviewId_);
     }
-    if (reviewRating_ != 0L) {
+    if (reviewRating_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, reviewRating_);
+        .computeInt32Size(2, reviewRating_);
     }
     if (!getReviewTextBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reviewText_);
@@ -211,8 +211,7 @@ public  final class Review extends
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getReviewId());
     hash = (37 * hash) + REVIEWRATING_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getReviewRating());
+    hash = (53 * hash) + getReviewRating();
     hash = (37 * hash) + REVIEWTEXT_FIELD_NUMBER;
     hash = (53 * hash) + getReviewText().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -335,7 +334,7 @@ public  final class Review extends
       super.clear();
       reviewId_ = 0L;
 
-      reviewRating_ = 0L;
+      reviewRating_ = 0;
 
       reviewText_ = "";
 
@@ -408,7 +407,7 @@ public  final class Review extends
       if (other.getReviewId() != 0L) {
         setReviewId(other.getReviewId());
       }
-      if (other.getReviewRating() != 0L) {
+      if (other.getReviewRating() != 0) {
         setReviewRating(other.getReviewRating());
       }
       if (!other.getReviewText().isEmpty()) {
@@ -467,28 +466,28 @@ public  final class Review extends
       return this;
     }
 
-    private long reviewRating_ ;
+    private int reviewRating_ ;
     /**
-     * <code>int64 reviewRating = 2;</code>
+     * <code>int32 reviewRating = 2;</code>
      */
-    public long getReviewRating() {
+    public int getReviewRating() {
       return reviewRating_;
     }
     /**
-     * <code>int64 reviewRating = 2;</code>
+     * <code>int32 reviewRating = 2;</code>
      */
-    public Builder setReviewRating(long value) {
+    public Builder setReviewRating(int value) {
       
       reviewRating_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 reviewRating = 2;</code>
+     * <code>int32 reviewRating = 2;</code>
      */
     public Builder clearReviewRating() {
       
-      reviewRating_ = 0L;
+      reviewRating_ = 0;
       onChanged();
       return this;
     }

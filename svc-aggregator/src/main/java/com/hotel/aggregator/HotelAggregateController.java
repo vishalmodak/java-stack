@@ -32,12 +32,10 @@ public class HotelAggregateController {
 //        return json;
 //    }
 
-    @RequestMapping(value="/info/{hotelId}", method = RequestMethod.GET, produces={"application/json"})
+    @RequestMapping(value="/info/async/{hotelId}", method = RequestMethod.GET, produces={"application/json","application/x-protobuf"})
     @ApiOperation(value = "getHotelDetails", notes = "Returns Hotel Name, Price, Reviews & Rating")
-    public String getHotelInfoAsync(@PathVariable String hotelId) throws Exception {
-        Gson gson = new Gson();
-        String json = gson.toJson(aggregator.getHotelData(hotelId));
-        return json;
+    public HotelShoppingInfo getHotelInfoAsync(@PathVariable String hotelId) throws Exception {
+        return aggregator.getHotelData(hotelId);
     }
 
     @RequestMapping(value="/info/sync/{hotelId}", method = RequestMethod.GET, produces={"application/json","application/x-protobuf"})
@@ -46,11 +44,4 @@ public class HotelAggregateController {
         return syncAggregator.getHotelData(hotelId);
     }
     
-//    @RequestMapping(value="/infoY/{hotelId}", method = RequestMethod.GET)
-//    @ApiOperation(value = "getHotelDetails", notes = "Returns Hotel Name, Price, Reviews & Rating")
-//    public String getHotelInfo(@PathVariable String hotelId) throws Exception {
-//        Gson gson = new Gson();
-//        String json = gson.toJson(aggregator.getHotelInfo(hotelId));
-//        return json;
-//    }
 }
