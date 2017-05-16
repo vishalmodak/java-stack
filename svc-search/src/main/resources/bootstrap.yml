@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: svc-search
+  cloud:
+    consul:
+      config:
+        fail-fast: false
+      enabled: true

@@ -12,10 +12,10 @@ import com.hotel.reviews.proto.HotelReviewInfo;
 @RestController
 public class HotelRatingController {
 
-    private HotelRatingService service;
+    private HotelReviewsService service;
     
     @Autowired
-    public HotelRatingController(HotelRatingService service) {
+    public HotelRatingController(HotelReviewsService service) {
         this.service = service;
     }
     

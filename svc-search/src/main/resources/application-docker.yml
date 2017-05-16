@@ -1,0 +1,8 @@
+spring:
+  zipkin:
+    base-url: http://zipkin:9411
+  cloud:
+    consul:
+      discovery:
+        preferIpAddress: true
+        instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}

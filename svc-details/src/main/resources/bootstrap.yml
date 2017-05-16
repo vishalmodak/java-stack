@@ -2,9 +2,13 @@ spring:
   application:
     name: svc-details
   cloud:
+    bus:
+      enabled: false
     consul:
-#      enabled: false
-#      binder:
-#        enabled: false
+      enabled: false
+      discovery:
+        enabled: false
+        fail-fast: false
       config:
+        enabled: false
         fail-fast: false

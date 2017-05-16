@@ -17,6 +17,7 @@ services:
     environment:
       CONSUL_HOST: consul
       MEMCACHED_IP: memcached
+      KAFKA_BROKER_HOST: kafka
     # logging:
     #   driver: gelf
     #   options:
@@ -38,6 +39,7 @@ services:
       - docker_hotel
     environment:
       CONSUL_HOST: consul
+      KAFKA_BROKER_HOST: kafka
     # logging:
     #   driver: gelf
     #   options:
@@ -59,6 +61,7 @@ services:
       - docker_hotel
     environment:
       CONSUL_HOST: consul
+      KAFKA_BROKER_HOST: kafka
     # logging:
     #   driver: gelf
     #   options:
@@ -80,6 +83,7 @@ services:
       - docker_hotel
     environment:
       CONSUL_HOST: consul
+      KAFKA_BROKER_HOST: kafka
     # logging:
     #   driver: gelf
     #   options:

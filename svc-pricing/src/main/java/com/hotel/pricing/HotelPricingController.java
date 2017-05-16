@@ -29,7 +29,7 @@ public class HotelPricingController {
     
     @RequestMapping(value="/pricing/partial/{hotelId}", method=RequestMethod.GET, produces={"application/json","application/x-protobuf"})
     @ApiOperation(value = "getHotelPricing", notes = "Returns the price & availability for a given hotel")
-    public HotelPricePreview getHotelPricePartial(@PathVariable int hotelId) throws Exception {
+    public HotelPricePreview getHotelPricePartial(@PathVariable long hotelId) throws Exception {
         return service.getHotelPricing(hotelId);
     }
     

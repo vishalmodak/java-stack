@@ -2,6 +2,13 @@ spring:
   application:
     name: svc-rating
   cloud:
+    bus:
+      enabled: false
     consul:
+      enabled: false
+      discovery:
+        enabled: false
+        fail-fast: false
       config:
+        enabled: false
         fail-fast: false

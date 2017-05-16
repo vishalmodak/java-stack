@@ -6,9 +6,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.stream.Stream;
-
-import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,20 +22,22 @@ import com.hotel.proto.HotelsList;
 public class HotelDetailService {
     
     private static final Logger LOG = LoggerFactory.getLogger(HotelDetailService.class);
-
-    private Map<Long, HotelDetails> detailsMap = new HashMap<>();
     
     @Autowired
     private RandomHotelGenerator hotelGenerator;
     
+    private Map<Long, HotelDetails> detailsMap = new HashMap<>();
+    private Random latencyDelay = new Random();
+    
     public HotelDetails getHotelDetails(Long hotelId) throws Exception {
-//        HotelDetails details = detailsMap.get(Long.valueOf(hotelId));
+        Thread.sleep(latencyDelay.nextInt(5000));
         return hotelGenerator.build(hotelId);
     }
 
     public HotelsList getHotelList(int pageSize) throws Exception {
-      return hotelGenerator.build(pageSize);
-  }
+        Thread.sleep(latencyDelay.nextInt(5000));
+        return hotelGenerator.build(pageSize);
+    }
     
 //    @PostConstruct
     public void loadHotels() {

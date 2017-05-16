@@ -4,7 +4,7 @@
     <springProperty name="appName" source="spring.application.name"/>
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>[%date]|${HOSTNAME}|${appName}|%-5level|%logger{35}|%line|%msg%n%ex</pattern>
+            <pattern>[%date]|${HOSTNAME}|${appName}|%-5level|%logger{35}|%line|%msg%n</pattern>
         </encoder>
     </appender>
     

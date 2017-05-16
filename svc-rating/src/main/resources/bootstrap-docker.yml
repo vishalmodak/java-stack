@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    bus:
+      enabled: true
+    consul:
+      enabled: true
+      discovery:
+        enabled: true
+        fail-fast: false
+      config:
+        enabled: true
+        fail-fast: false

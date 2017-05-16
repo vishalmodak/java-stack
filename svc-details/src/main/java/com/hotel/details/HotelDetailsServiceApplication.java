@@ -6,9 +6,13 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter;
+import org.springframework.kafka.annotation.EnableKafka;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+@EnableKafka
+@EnableScheduling
 @EnableHystrix
 @SpringBootApplication
 @EnableSwagger2
