@@ -40,12 +40,12 @@ public class HotelReviewsPublisher {
 
               @Override
               public void onSuccess(SendResult<String, String> result) {
-                LOG.info("sent reviews update for hotel='{}'", reviewInfo.getHotelId());
+                  LOG.info("sent reviews update for hotel='{}'", reviewInfo.getHotelId());
               }
 
               @Override
               public void onFailure(Throwable ex) {
-                LOG.error("failed reviews update for hotel='{}'", reviewInfo.getHotelId(), ex);
+                  LOG.error("failed reviews update for hotel='{}'", reviewInfo.getHotelId(), ex);
               }
             });
         } catch (Exception e) {

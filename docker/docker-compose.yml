@@ -1,23 +1,23 @@
 version: "2"
 services:
-  svc-aggregator:
-    build:
-      context: ../svc-aggregator
-      args:
-        COLLECTOR_IP: 10.65.171.9
-    image: svc-aggregator
-    container_name: hotel-aggregator
-    networks:
-      - docker_hotel
-    external_links:
-      - zipkin:zipkin
-    ports:
-      - 10000:10000
-      - 9999:9999
-    environment:
-      CONSUL_HOST: consul
-      MEMCACHED_IP: memcached
-      KAFKA_BROKER_HOST: kafka
+#  svc-aggregator:
+#    build:
+#      context: ../svc-aggregator
+#      args:
+#        COLLECTOR_IP: 10.65.171.9
+#    image: svc-aggregator
+#    container_name: hotel-aggregator
+#    networks:
+#      - docker_hotel
+#    external_links:
+#      - zipkin:zipkin
+#    ports:
+#      - 10000:10000
+#      - 9999:9999
+#    environment:
+#      CONSUL_HOST: consul
+#      MEMCACHED_IP: memcached
+#      KAFKA_BROKER_HOST: kafka
     # logging:
     #   driver: gelf
     #   options:
@@ -90,34 +90,34 @@ services:
     #     gelf-address: udp://localhost:12201
     #     tag: 'rating-log'
 
-  svc-availability:
-    build:
-      context: ../svc-availability
-      args:
-        COLLECTOR_IP: 10.65.171.9
-    image: svc-availability
-    container_name: hotel-availability
-    external_links:
-      - zipkin
-    ports:
-      - 10001:10001
-    networks:
-      - docker_hotel
-    environment:
-      CONSUL_HOST: consul
+#  svc-availability:
+#    build:
+#      context: ../svc-availability
+#      args:
+#        COLLECTOR_IP: 10.65.171.9
+#    image: svc-availability
+#    container_name: hotel-availability
+#    external_links:
+#      - zipkin
+#    ports:
+#      - 10001:10001
+#    networks:
+#      - docker_hotel
+#    environment:
+#      CONSUL_HOST: consul
     # logging:
     #   driver: gelf
     #   options:
     #     gelf-address: udp://localhost:12201
     #     tag: 'availability-log'
 
-  memcached:
-    image: memcached:alpine
-    container_name: memcached
-    ports:
-      - "11211:11211"
-    networks:
-      - docker_hotel
+#  memcached:
+#    image: memcached:alpine
+#    container_name: memcached
+#    ports:
+#      - "11211:11211"
+#    networks:
+#      - docker_hotel
 
 networks:
   docker_hotel:

@@ -30,8 +30,9 @@ public class HotelDetailsPublisher {
     @Scheduled(fixedRate = 5000)
     public void publishUpdate() throws Exception {
         try {
-            HotelDetails details = hotelGenerator.build(Long.valueOf(RandomUtils.nextInt(100)));
-            ListenableFuture<SendResult<String, String>> future = kafkaSender.sendDefault(JsonFormat.printer().print(details));
+            Long hotelId = Long.valueOf(RandomUtils.nextInt(100));
+            HotelDetails details = hotelGenerator.build(hotelId);
+            ListenableFuture<SendResult<String, String>> future = kafkaSender.sendDefault(hotelId.toString(), JsonFormat.printer().print(details));
 
             // register a callback with the listener to receive the result of the send asynchronously
             future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {

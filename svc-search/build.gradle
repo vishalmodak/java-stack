@@ -48,17 +48,19 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3.1'
     compile("org.springframework.cloud:spring-cloud-starter-hystrix:${springCloudVersion}")
     compile "org.springframework.cloud:spring-cloud-starter-feign:${springCloudVersion}"
-    compile ('org.springframework.cloud:spring-cloud-starter-consul-all:1.1.3.RELEASE')
+//    compile ('org.springframework.cloud:spring-cloud-starter-consul-all:1.1.3.RELEASE')
     compile "io.prometheus:simpleclient_spring_boot:${prometheus_version}"
     compile "io.prometheus:simpleclient_hotspot:${prometheus_version}"
     compile "io.prometheus:simpleclient_servlet:${prometheus_version}"
     compile "io.prometheus:simpleclient_dropwizard:${prometheus_version}"
     compile("io.springfox:springfox-swagger2:2.5.0")
     compile("io.springfox:springfox-swagger-ui:2.5.0")
-    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-stream-kafka
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-stream-kafka', version: '1.2.0.RELEASE'
+    compile 'org.springframework.cloud:spring-cloud-starter-stream-kafka:1.2.0.RELEASE'
+    compile 'org.springframework.kafka:spring-kafka:1.2.1.RELEASE'
+    compile 'org.apache.kafka:kafka-streams:0.10.2.1'
 
-    
+    compile "com.graphql-java:graphql-java:3.0.0"
+    compile "com.graphql-java:graphql-java-annotations:0.14.0"
     
     testCompile("org.springframework.boot:spring-boot-starter-test") 
 }

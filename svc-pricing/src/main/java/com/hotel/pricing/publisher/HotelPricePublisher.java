@@ -31,7 +31,7 @@ public class HotelPricePublisher {
         try {
             Long hotelId = Long.valueOf(RandomUtils.nextInt(100));
             HotelPricePreview pricePreview = priceGenerator.build(hotelId);
-            ListenableFuture<SendResult<String, String>> future = kafkaSender.sendDefault(JsonFormat.printer().print(pricePreview));
+            ListenableFuture<SendResult<String, String>> future = kafkaSender.sendDefault(hotelId.toString(), JsonFormat.printer().print(pricePreview));
 
             // register a callback with the listener to receive the result of the send asynchronously
             future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
